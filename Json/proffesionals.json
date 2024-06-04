@@ -1,0 +1,34 @@
+{
+    "proffetionals":{
+        "specialization":["plumber"],
+        "name":"Ori",
+        "phoneNumber":"12345678",
+        "yearsOfExperience":10,
+        "serviceArea":5,
+        "rating":{
+            "totalStars":2,
+            "UserswhoRated":10
+        },
+        "reviews": [{
+            "name":"joni",
+            "rating":5,
+            "reviewText":"good service",
+            "reviewDate":"2022-01-01"
+            },
+            {
+                "name":"joni",
+                "rating":5,
+                "reviewText":"good service",
+                "reviewDate":"2022-01-01"
+            }],
+            "availabilty":{
+                "sunday":[9,10,11,12,13,14,15,16,17],
+                "monday":[9,10,11,12,13,14,15,16,17],
+                "tuesday":[9,10,11,12,13,14,15,16,17],
+                "wednesday":[9,10,11,12,13,14,15,16,17],
+                "thursday":[9,10,11,12,13,14,15,16,17],
+                "friday":[9,10,11,12,13]
+            }
+
+    }
+}
