@@ -1,4 +1,3 @@
-
 // const proffesionalsData = await axios.get(url)
 
 const params = new URLSearchParams(window.location.search)
