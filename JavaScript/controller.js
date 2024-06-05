@@ -5,7 +5,6 @@
 console.log(filterData("specialization","painter"));
 
 // const proffesionalsData = await axios.get(url)
-const filteredData = {...proffesionalsData}
 
 const params = new URLSearchParams(window.location.search)
 const specializationFilterValue = params.get('specialization')
@@ -31,6 +30,10 @@ function proffesionalsPageInit(data) {
 
     return filteredData;
 }
+
+
+
+
 
 // function filterData(key, value){
 //     return proffesionalsArray.reduce((acc, item) => {
