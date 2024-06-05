@@ -1,9 +1,11 @@
 .mainContainer {
     position: relative;
     width: 50vw;
-    height: 80vh;
+    height: fit-content;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    gap: 1em;
     background-color: aliceblue;
     padding: 1em;
     margin: 1em;
@@ -36,3 +38,17 @@ p.infoKey {
 i{
     padding-left: 4px;
 }
+
+.wrapperDetailsAndImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.carousela{
+    height: 6em;
+    display: flex;
+    flex-direction: row;
+}
+

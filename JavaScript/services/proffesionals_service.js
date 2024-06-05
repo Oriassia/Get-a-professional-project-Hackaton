@@ -62,6 +62,7 @@ const ratingFilterValue = params.get("rating");
 
 function proffesionalsPageInit(data) {
   let filteredData = [...data]; // Make a copy of the data array
+  let filteredData = [...data]; // Make a copy of the data array
 
   if (specializationFilterValue) {
     filteredData = filteredData.filter((item) =>
@@ -78,10 +79,21 @@ function proffesionalsPageInit(data) {
   if (ratingFilterValue) {
     filteredData = filterByRating(ratingFilterValue, filteredData);
   }
+  if (ratingFilterValue) {
+    filteredData = filterByRating(ratingFilterValue, filteredData);
+  }
 
+  return filteredData;
   return filteredData;
 }
 
+function filterByRating(ratingFilterValue, dataArray) {
+  return dataArray.filter((item) => {
+    const starsSum = item.rating.totalStars;
+    const usersWhoRatedSum = item.rating.usersWhoRated;
+    const ratingSum = (starsSum / usersWhoRatedSum).toFixed(1);
+    return ratingSum >= ratingFilterValue;
+  });
 function filterByRating(ratingFilterValue, dataArray) {
   return dataArray.filter((item) => {
     const starsSum = item.rating.totalStars;
