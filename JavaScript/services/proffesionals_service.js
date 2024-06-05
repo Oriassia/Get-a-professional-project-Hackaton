@@ -1,5 +1,5 @@
 // const proffesionalsData = await axios.get(url)
-const baseURL = "http://localhost:8002/professionals";
+const baseURL = "http://localhost:8001/professionals";
 const elementCardsContainer = document.querySelector(
   ".proffesional-card-container"
 );
@@ -25,7 +25,7 @@ function renderProffesionalsCards(array) {
     const card = `
     <a href = "http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}">
     <div class = "proffesional-card" >
-    <img src="" alt=""></img>
+    <img src="${obj.image}" alt=""></img>
     <p>${obj.name}</p>
     <p>${obj.specialization}</p>
     <p>${obj.serviceArea}</p>
@@ -53,15 +53,12 @@ function updateUrlByFilter(ev) {
   window.location.search = params;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-
 const params = new URLSearchParams(window.location.search);
 const specializationFilterValue = params.get("specialization");
 const servicaAreaFilterValue = params.get("servicearea");
 const ratingFilterValue = params.get("rating");
 
 function proffesionalsPageInit(data) {
-  let filteredData = [...data]; // Make a copy of the data array
   let filteredData = [...data]; // Make a copy of the data array
 
   if (specializationFilterValue) {
@@ -94,6 +91,7 @@ function filterByRating(ratingFilterValue, dataArray) {
     const ratingSum = (starsSum / usersWhoRatedSum).toFixed(1);
     return ratingSum >= ratingFilterValue;
   });
+}
 function filterByRating(ratingFilterValue, dataArray) {
   return dataArray.filter((item) => {
     const starsSum = item.rating.totalStars;
