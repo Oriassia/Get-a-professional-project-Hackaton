@@ -881,6 +881,99 @@
         }
       ],
       "availability": {
+        "sunday": [
+          { "hour": "9", "available": "true" },
+          { "hour": "10", "available": "true" },
+          { "hour": "11", "available": "true" },
+          { "hour": "12", "available": "true" },
+          { "hour": "13", "available": "true" },
+          { "hour": "14", "available": "true" },
+          { "hour": "15", "available": "true" }
+        ],
+        "monday": [
+          { "hour": "9", "available": "true" },
+          { "hour": "10", "available": "true" },
+          { "hour": "11", "available": "true" },
+          { "hour": "12", "available": "true" },
+          { "hour": "13", "available": "true" },
+          { "hour": "14", "available": "true" },
+          { "hour": "15", "available": "true" }
+        ],
+        "tuesday": [
+          { "hour": "9", "available": "true" },
+          { "hour": "10", "available": "true" },
+          { "hour": "11", "available": "true" },
+          { "hour": "12", "available": "true" },
+          { "hour": "13", "available": "true" },
+          { "hour": "14", "available": "true" },
+          { "hour": "15", "available": "true" }
+        ],
+        "wednesday": [
+          { "hour": "9", "available": "true" },
+          { "hour": "10", "available": "true" },
+          { "hour": "11", "available": "true" },
+          { "hour": "12", "available": "true" },
+          { "hour": "13", "available": "true" },
+          { "hour": "14", "available": "true" },
+          { "hour": "15", "available": "true" }
+        ],
+        "thursday": [
+          { "hour": "9", "available": "true" },
+          { "hour": "10", "available": "true" },
+          { "hour": "11", "available": "true" },
+          { "hour": "12", "available": "true" },
+          { "hour": "13", "available": "true" },
+          { "hour": "14", "available": "true" },
+          { "hour": "15", "available": "true" }
+        ],
+        "friday": [
+          { "hour": "9", "available": "true" },
+          { "hour": "10", "available": "true" },
+          { "hour": "11", "available": "true" },
+          { "hour": "12", "available": "true" },
+          { "hour": "13", "available": "true" },
+          { "hour": "14", "available": "true" },
+          { "hour": "15", "available": "true" }
+        ],
+        "saturday": [
+          { "hour": "9", "available": "true" },
+          { "hour": "10", "available": "true" },
+          { "hour": "11", "available": "true" },
+          { "hour": "12", "available": "true" },
+          { "hour": "13", "available": "true" },
+          { "hour": "14", "available": "true" },
+          { "hour": "15", "available": "true" }
+        ]
+      }
+    }
+  ],
+  "appointments": [
+    {
+      "id": 101,
+      "date": "2024-06-10",
+      "time": "10:00 AM",
+      "professionalId": 1,
+      "professionalName": "David"
+    },
+    {
+      "id": 102,
+      "date": "2024-06-11",
+      "time": "02:00 PM",
+      "professionalId": 2,
+      "professionalName": "Sarah"
+    },
+    {
+      "id": 103,
+      "date": "2024-06-12",
+      "time": "09:00 AM",
+      "professionalId": 3,
+      "professionalName": "John"
+    }
+  ],
+  "favourites": []
+        }
+      ],
+      "availability": {
           "sunday": [
             { "hour": "9", "available": "true" },
             { "hour": "10", "available": "true" },
