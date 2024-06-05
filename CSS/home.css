@@ -1,0 +1,54 @@
+/* im main css */
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  padding: 1em;
+  background-color: rgb(185, 208, 228);
+  gap: 2em;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+}
+main {
+  height: 88vh;
+}
+#search {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#search input {
+  width: 35%;
+  padding: 13px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  border-radius: 5px;
+  text-align: start;
+  background-color: rgb(245, 240, 233);
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+
+}
+#search h2 {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+#professions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 5em 10em;
+}
