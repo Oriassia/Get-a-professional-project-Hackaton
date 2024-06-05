@@ -299,5 +299,7 @@ function filterData(key, value){
 console.log(filterData("specialization","painter"));
 
 const params = new URLSearchParams(window.location.search)
-const specialization = params.get('babi')
+const specialization = params.get('category')
+const servicaArea = params.get('servicearea')
 console.log(specialization);
+console.log(servicaArea);
