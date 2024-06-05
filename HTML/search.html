@@ -233,5 +233,17 @@
         </div>
       </div>
     </main>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+    <script>
+      const baseURL = "http://localhost:8001/professionals";
+
+      async function proffesionalsGet() {
+        const proffesionals = await axios.get(baseURL);
+        console.log(proffesionals.data);
+      }
+
+      proffesionalsGet();
+    </script>
   </body>
 </html>

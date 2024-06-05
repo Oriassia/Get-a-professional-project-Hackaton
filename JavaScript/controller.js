@@ -286,7 +286,6 @@ const proffesionalsArray = [
     }
 ]
 
-//filter by key and value function 
 function filterData(key, value){
     return proffesionalsArray.reduce((acc, item) => {
         if(item[key].includes(value)){
