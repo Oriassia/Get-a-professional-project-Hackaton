@@ -25,7 +25,7 @@ function renderProffesionalsCards(array) {
     const card = `
     <a href = "http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}">
     <div class = "proffesional-card" >
-    <img src="" alt=""></img>
+    <img src="${obj.image}" alt=""></img>
     <p>${obj.name}</p>
     <p>${obj.specialization}</p>
     <p>${obj.serviceArea}</p>
@@ -53,15 +53,20 @@ function updateUrlByFilter(ev) {
   window.location.search = params;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-
 const params = new URLSearchParams(window.location.search);
 const specializationFilterValue = params.get("specialization");
 const servicaAreaFilterValue = params.get("servicearea");
 const ratingFilterValue = params.get("rating");
 
 function proffesionalsPageInit(data) {
-  let filteredData = [...data]; 
+  let filteredData = [...data]; // Make a copy of the data array
+
+  if (specializationFilterValue) {
+    filteredData = filteredData.filter((item) =>
+      item.specialization.includes(specializationFilterValue)
+    );
+  }
+
   if (servicaAreaFilterValue) {
     filteredData = filteredData.filter((item) =>
       item.serviceArea.includes(servicaAreaFilterValue)
