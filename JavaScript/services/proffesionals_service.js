@@ -16,11 +16,15 @@ function proffesionalsPageInit(data) {
     );
   }
 
+
+    
+
   if (serviceAreaFilterValue) {
     filteredData = filteredData.filter((item) =>
       item.serviceArea.includes(serviceAreaFilterValue)
     );
   }
+
 
   if (ratingFilterValue) {
     filteredData = filterByRating(ratingFilterValue, filteredData);

@@ -12,40 +12,50 @@
   </head>
   <body>
     <main>
+
+    
+        
+    
+
   <nav>
         <a href="home.html"><img src="../imgs/output-onlinepngtools.png" alt="" /></a>
         <a href="favorites.html">My favourites</a>
         <a href="">My activity</a>
         <a href="appointments.html">My appointments</a>
-      </nav>      <div class="filter-select-container">
-        <select class="filter-select" name="" id="">
+      </nav>     
+        
+
+     
+      <form onsubmit="updateUrlByFilter(event)" class="filter-select-container">
+        <select class="filter-select specialization" name="" id="">
           <option value="">specialization</option>
-          <option value="">plumber</option>
-          <option value="">handyman</option>
-          <option value="">painter</option>
-          <option value="">gardener</option>
-          <option value="">electrician</option>
-          <option value="">locksmith</option>
+          <option value="plumber">plumber</option>
+          <option value="handyman">handyman</option>
+          <option value="painter">painter</option>
+          <option value="gardener">gardener</option>
+          <option value="electrician">electrician</option>
+          <option value="locksmith">locksmith</option>
         </select>
 
-        <select class="filter-select" name="" id="">
+        <select class="filter-select rating" name="" id="">
           <option value="">rating</option>
-          <option value="">1 star</option>
-          <option value="">2 stars</option>
-          <option value="">3 stars</option>
-          <option value="">4 stars</option>
-          <option value="">5 stars</option>
+          <option value="1 star">1 star</option>
+          <option value="2 stars">2 stars</option>
+          <option value="3 stars">3 stars</option>
+          <option value="4 stars">4 stars</option>
+          <option value="5 stars">5 stars</option>
         </select>
 
-        <select class="filter-select" name="" id="">
+        <select class="filter-select area" name="" id="">
           <option value="">area</option>
-          <option value="">Tel-Aviv district</option>
-          <option value="">Jerusalem-district</option>
-          <option value="">Southern-district</option>
-          <option value="">northern-district</option>
-          <option value="">Golan heights</option>
+          <option value="tel-Aviv-district">Tel-Aviv district</option>
+          <option value="jerusalem-district">Jerusalem-district</option>
+          <option value="southern-district">Southern-district</option>
+          <option value="northern-district">Northern-district</option>
+          <option value="golan-heights">Golan heights</option>
         </select>
-      </div>
+        <button >Filter</button>
+      </form>
 
       <div class="proffesional-card-container"></div>
       <footer id="footer">
@@ -53,19 +63,19 @@
           <div class="row">
             <div id="col1">
               <span id="icon" class="fa fa-map-marker"></span>
-  
+
               <span>
                 Ha-Khilazon St 3, Ramat-Gan
                 <br />Israel, 5252267
               </span>
             </div>
-  
+
             <div id="col2">
               <span id="icon" class="fa fa-phone"></span>
-  
+
               <span> Telephone: +972774123211 </span>
             </div>
-  
+
             <div id="col3">
               <span id="icon" class="fa fa-envelope"></span>
               <span>info@iitc.co.il</span>
@@ -74,16 +84,16 @@
         </div>
         <div class="copyright">
           <p>© All rights reserved | Junior Developers</p>
-  
+
           <ul class="contact">
             <li>
               <a href="#" class="fa fa-whatsapp"> </a>
             </li>
-  
+
             <li>
               <a href="#" class="fa fa-facebook"> </a>
             </li>
-  
+
             <li>
               <a href="#" class="fa fa-github"> </a>
             </li>
