@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/home.css" />
+    <link rel="stylesheet" href="/CSS/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,32 +12,125 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nanum+Gothic&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
   <body>
     <nav>
-      <a href="">Logo</a>
+      <a href="home.html"
+        ><img src="../imgs/output-onlinepngtools.png" alt=""
+      /></a>
       <a href="">My favourites</a>
       <a href="">My activity</a>
-      <a href="">My appoimtments</a>
+      <a href="">My appointments</a>
     </nav>
     <main>
       <div id="search">
-        <h2>Find Proffessionals</h2>
-        <input type="text" placeholder="Search for a professional" />
+        <h2>Find Your Proffessional</h2>
+        <p>
+          Home service professionals ensure the comfort, functionality, and
+          safety of our homes. These skilled experts, including electricians,
+          plumbers, gardeners, handymen, painters, and locksmiths, address a
+          variety of household needs. Whether it's installing wiring, fixing
+          leaks, maintaining gardens, performing repairs, painting, or securing
+          entry points, they bring specialized knowledge and experience to each
+          task. Their work enhances the aesthetic appeal and operational
+          efficiency of homes, providing homeowners with peace of mind. By
+          leveraging their expertise, homeowners save time, avoid hazards, and
+          enjoy a well-maintained and smoothly functioning home environment.
+        </p>
       </div>
       <div id="professions">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
+        <div>
+          <a href="./search.html?specialization=electrician">
+            <img src="../imgs/electrician.jpeg" alt="" />
+            <p>Electrician</p>
+          </a>
+        </div>
+        <div>
+          <a href="./search.html?specialization=gardener">
+            <img src="../imgs/gard.jpg" alt="" />
+            <p>Gardener</p>
+          </a>
+        </div>
+        <div>
+          <a href="./search.html?specialization=handyman">
+            <img src="../imgs/handyman-services.jpg" alt="" />
+            <p>Handyman</p>
+          </a>
+        </div>
+        <div>
+          <a href="./search.html?specialization=locksmith">
+            <img src="../imgs/locksmith.jpeg" alt="" />
+            <p>Locksmith</p>
+          </a>
+        </div>
+        <div>
+          <a href="./search.html?specialization=plumber">
+            <img src="../imgs/plumber.jpg" alt="" />
+            <p>Plumber</p>
+          </a>
+        </div>
+        <div>
+          <a href="./search.html?specialization=painter">
+            <img src="../imgs/wallpainter.webp" alt="" />
+            <p>Painter</p>
+          </a>
+        </div>
       </div>
     </main>
-    <footer>footer</footer>
+    <footer id="footer">
+      <div class="company-details">
+        <div class="row">
+          <div id="col1">
+            <span id="icon" class="fa fa-map-marker"></span>
+
+            <span>
+              Ha-Khilazon St 3, Ramat-Gan
+              <br />Israel, 5252267
+            </span>
+          </div>
+
+          <div id="col2">
+            <span id="icon" class="fa fa-phone"></span>
+
+            <span> Telephone: +972774123211 </span>
+          </div>
+
+          <div id="col3">
+            <span id="icon" class="fa fa-envelope"></span>
+            <span>info@iitc.co.il</span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© All rights reserved | Junior Developers</p>
+
+        <ul class="contact">
+          <li>
+            <a href="#" class="fa fa-whatsapp"> </a>
+          </li>
+
+          <li>
+            <a href="#" class="fa fa-facebook"> </a>
+          </li>
+
+          <li>
+            <a href="#" class="fa fa-github"> </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/JavaScript/controller.js"></script>
   </body>
 </html>
