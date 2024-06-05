@@ -7,9 +7,16 @@ nav {
   display: flex;
   text-align: center;
   align-items: center;
-  background-color: rgb(185, 208, 228);
+  background-color: rgba(175, 211, 240, 0.744);
   gap: 2em;
   position: sticky;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  text-transform: uppercase;
 }
 nav img {
   height: 60px;
@@ -18,10 +25,10 @@ nav img {
 }
 nav a {
   text-decoration: none;
-  color: black;
+  color: rgb(37, 37, 37);
 }
 .company-details {
-  padding: 2em 0em;
+  padding: 1.5em 0em;
   background: #e3f0f7;
   text-align: center;
 }
@@ -33,19 +40,19 @@ nav a {
 #footer #col1,
 #footer #col2,
 #footer #col3 {
-  width: 320px;
+  width: 250px;
 }
-span{
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+span {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: smaller;
 }
 #footer #icon {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 0.3em;
   font-size: 3em;
 }
 .copyright {
