@@ -1,19 +1,6 @@
-@import url(reset.css);
-
-
-nav{
-    height: 2em;
-    background-color: #000;
-    position: sticky;
-}
-
-footer{
-    background-color: #000;
-    height: 3em;
-}
 .mainContainer {
     position: relative;
-    width: 70%;
+    width: 50vw;
     height: 80vh;
     display: flex;
     justify-content: space-between;
@@ -23,18 +10,26 @@ footer{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 p.infoKey {
-    display: inline;
-    font-weight: bold;
-    text-decoration: underline;
+  display: inline;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .detailsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+
+}
+
+
+#image{
+    width: 50%;
+}
+
+.infoDetail{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#bookMe{
-    position: fixed;
-    
-}
