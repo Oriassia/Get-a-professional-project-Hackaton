@@ -12,6 +12,10 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../CSS/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css"
+    />
   </head>
   <body>
     <div class="pageContainer">
@@ -24,41 +28,46 @@
         <a href="appointments.html">My appointments</a>
       </nav>
       <div class="mainContainer">
-        <div class="detailsContainer">
-          <div class="infoDetail">
-            <div class="dataLine">
-              <p class="infoKey">specialzie:</p>
-              <span class="infoValue" id="specialization">N/A</span>
-            </div>
-            <div class="dataLine">
-              <p class="infoKey">name:</p>
-              <span class="infoValue" id="name">N/A</span>
-            </div>
-            <div class="dataLine">
-              <p class="infoKey">Years of Experience:</p>
-              <span class="infoValue" id="yearsOfExperience">N/A</span>
-            </div>
-            <div class="dataLine">
-              <p class="infoKey">Rating:</p>
-              <span class="infoValue" id="rating">N/A</span>
-            </div>
-            <div class="dataLine">
-              <p class="infoKey">Service area:</p>
-              <span class="infoValue" id="serviceArea">N/A</span>
-            </div>
-            <div class="dataLine">
-              <p class="infoKey">Phone number:</p>
-              <span class="infoValue" id="phoneNumber">N/A</span>
-            </div>
-            <div class="buttonAndIcon">
+        <div class="wrapperDetailsAndImage">
+          <div class="detailsContainer">
+            <div class="infoDetail">
+              <div class="dataLine">
+                <p class="infoKey">specialzie:</p>
+                <span class="infoValue" id="specialization">N/A</span>
+              </div>
+              <div class="dataLine">
+                <p class="infoKey">name:</p>
+                <span class="infoValue" id="name">N/A</span>
+              </div>
+              <div class="dataLine">
+                <p class="infoKey">Years of Experience:</p>
+                <span class="infoValue" id="yearsOfExperience">N/A</span>
+              </div>
+              <div class="dataLine">
+                <p class="infoKey">Rating:</p>
+                <span class="infoValue" id="rating">N/A</span>
+              </div>
+              <div class="dataLine">
+                <p class="infoKey">Service area:</p>
+                <span class="infoValue" id="serviceArea">N/A</span>
+              </div>
+              <div class="dataLine">
+                <p class="infoKey">Phone number:</p>
+                <span class="infoValue" id="phoneNumber">N/A</span>
+              </div>
+              <div class="dataLine">
+                <p class="infoKey">Reviews:</p>
+                <span class="infoValue" id="reviews">N/A</span>
+              </div>
               <button id="bookMe">
                 Book me<i class="fa-regular fa-calendar-check"></i>
               </button>
             </div>
           </div>
+          <img src="" alt="No image available" id="image" />
         </div>
-        <img src="" alt="No image available" id="image" />
       </div>
+      <dialog></dialog>
       <footer id="footer">
         <div class="company-details">
           <div class="row">
@@ -102,6 +111,7 @@
         </div>
       </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/JavaScript/services/details.service.js"></script>
   </body>
