@@ -91,8 +91,9 @@ async function addReview(e) {
 
     data.reviews.push(newReview);
     console.log(data);
-    const res = await axios.put(`${profesUrl}/${profId}`, data);
+   await axios.put(`${profesUrl}/${profId}`, data);
   } catch (error) {
     console.log(error);
   }
+  cancelPopUp()
 }
