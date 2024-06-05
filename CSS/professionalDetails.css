@@ -21,7 +21,6 @@ p.infoKey {
     display: flex;
     flex-direction: row;
     justify-content: space-between
-
 }
 
 
@@ -52,3 +51,13 @@ i{
     flex-direction: row;
 }
 
+button{
+    display: block;
+}
+
+dialog{
+    position: fixed;
+    top: 30vh;
+    border-radius: 5px;
+    font-weight: bold;
+}

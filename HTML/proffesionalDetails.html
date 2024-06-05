@@ -23,9 +23,9 @@
         <a href="home.html"
           ><img src="../imgs/output-onlinepngtools.png" alt=""
         /></a>
-        <a href="">My favourites</a>
+        <a href="favorites.html">My favourites</a>
         <a href="">My activity</a>
-        <a href="">My appoimtments</a>
+        <a href="appointments.html">My appointments</a>
       </nav>
       <div class="mainContainer">
         <div class="wrapperDetailsAndImage">
@@ -59,15 +59,39 @@
                 <p class="infoKey">Reviews:</p>
                 <span class="infoValue" id="reviews">N/A</span>
               </div>
-              <button id="bookMe">
-                Book me<i class="fa-regular fa-calendar-check"></i>
-              </button>
             </div>
           </div>
           <img src="" alt="No image available" id="image" />
         </div>
+        <button id="bookMe">
+          Book me<i class="fa-regular fa-calendar-check"></i>
+        </button>
+        <button id="addReviewBtn" onclick="showPopUp()">Add review</button>
       </div>
-      <dialog></dialog>
+      <dialog class="addReview">
+        <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
+        <form onsubmit="addReview(event)" class="addReviewForm">
+          <input
+            type="text"
+            id="reviewerNameInput"
+            placeholder="Enter your name"
+            required
+          />
+          <input
+            type="number"
+            id="ratingInput"
+            placeholder="Enter your rating 1-5"
+            required
+          />
+          <input
+            type="text"
+            id="reviewTextInput"
+            placeholder="Enter your review"
+            required
+          />
+          <button>Submit</button>
+        </form>
+      </dialog>
       <footer id="footer">
         <div class="company-details">
           <div class="row">

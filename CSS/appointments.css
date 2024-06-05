@@ -1,0 +1,26 @@
+.appointments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust the gap between rows */
+    padding-block: 1em;
+    padding-inline: 2em;
+  }
+  
+  .appointment-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .appointment-info {
+    flex: 1;
+  }
+  
+  .appointment-info p {
+    margin: 5px 0;
+  }
+  
