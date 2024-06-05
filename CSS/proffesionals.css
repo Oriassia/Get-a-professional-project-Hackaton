@@ -1,23 +1,18 @@
 .card-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-items: center;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 10px;
+}
+
+.card {
+  width: 200px;
+  background-color: #f8fbfe;
+  border-radius: 8px;
+  border: solid 1px black;
+  z-index: 1;
 }
 
 
-.card {
-    width: 200px;
-    
-    
-    background-color: #F8FBFE;
-    border-radius: 8px;
-    border: solid 1px black;
-    z-index: 1;
-   }
-   
-   .card h3{
-    display: inline-block;
-   }
-   
+
