@@ -14,8 +14,8 @@ function proffesionalsPageInit(data) {
         filteredData = filteredData.filter(item => item.specialization.includes(specializationFilterValue));
     }
 
-    if (serviceAreaFilterValue) {
-        filteredData = filteredData.filter(item => item.serviceArea.includes(serviceAreaFilterValue));
+    if (servicaAreaFilterValue) {
+        filteredData = filteredData.filter(item => item.serviceArea.includes(servicaAreaFilterValue));
     }
 
     if (ratingFilterValue) {

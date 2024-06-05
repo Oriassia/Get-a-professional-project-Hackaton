@@ -2,6 +2,7 @@
 .filter-select-container {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
   gap: 70px;
 }
 .filter-select {
@@ -34,6 +35,7 @@
   border-radius: 8px;
   border: solid 1px black;
   z-index: 1;
+  max-width: 200px;
 }
  
 a{
