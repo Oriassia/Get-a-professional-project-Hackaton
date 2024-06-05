@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proffesional Details</title>
-    <link rel="stylesheet" href="/CSS/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../CSS/main.css" />
   </head>
   <body>
     <div class="pageContainer">
       <nav>
-        <a href="home.html"><img src="../imgs/output-onlinepngtools.png" alt=""></a>
+        <a href="home.html"
+          ><img src="../imgs/output-onlinepngtools.png" alt=""
+        /></a>
         <a href="">My favourites</a>
         <a href="">My activity</a>
         <a href="">My appoimtments</a>
@@ -41,14 +50,59 @@
               <p class="infoKey">Phone number:</p>
               <span class="infoValue" id="phoneNumber">N/A</span>
             </div>
-            <button id="bookMe">Book me</button>
+            <div class="buttonAndIcon">
+              <button id="bookMe">
+                Book me<i class="fa-regular fa-calendar-check"></i>
+              </button>
+            </div>
           </div>
         </div>
         <img src="" alt="No image available" id="image" />
       </div>
-      <footer></footer>
+      <footer id="footer">
+        <div class="company-details">
+          <div class="row">
+            <div id="col1">
+              <span id="icon" class="fa fa-map-marker"></span>
+
+              <span>
+                Ha-Khilazon St 3, Ramat-Gan
+                <br />Israel, 5252267
+              </span>
+            </div>
+
+            <div id="col2">
+              <span id="icon" class="fa fa-phone"></span>
+
+              <span> Telephone: +972774123211 </span>
+            </div>
+
+            <div id="col3">
+              <span id="icon" class="fa fa-envelope"></span>
+              <span>info@iitc.co.il</span>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© All rights reserved | Junior Developers</p>
+
+          <ul class="contact">
+            <li>
+              <a href="#" class="fa fa-whatsapp"> </a>
+            </li>
+
+            <li>
+              <a href="#" class="fa fa-facebook"> </a>
+            </li>
+
+            <li>
+              <a href="#" class="fa fa-github"> </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="details.service.js"></script>
+    <script src="/JavaScript/services/details.service.js"></script>
   </body>
 </html>
