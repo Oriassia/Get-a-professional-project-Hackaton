@@ -29,7 +29,6 @@ function renderProffesionalsCards(array) {
     <p>${obj.name}</p>
     <p>${obj.specialization}</p>
     <p>${obj.serviceArea}</p>
-    
     </div>
     </a>
       `;
