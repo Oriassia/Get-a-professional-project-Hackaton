@@ -13,7 +13,7 @@ footer{
 }
 .mainContainer {
     position: relative;
-    width: 70%;
+    width: 50vw;
     height: 80vh;
     display: flex;
     justify-content: space-between;
@@ -30,11 +30,19 @@ p.infoKey {
 
 .detailsContainer {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between
+
+}
+
+
+#image{
+    width: 50%;
+}
+
+.infoDetail{
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#bookMe{
-    position: fixed;
-    
-}
