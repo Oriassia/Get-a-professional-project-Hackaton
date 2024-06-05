@@ -1,33 +1,23 @@
-const prof = {
-  id: 1,
-  specialization: ["plumber"],
-  name: "David",
-  phoneNumber: "32456789",
-  yearsOfExperience: 15,
-  serviceArea: "northern-district",
-  rating: {
-    totalStars: 4,
-    UserswhoRated: 32,
-  },
-  image: "/OriAssiaPhoto.jpg",
-  reviews: [
-    {
-      reviewerName: "Tom",
-      reviewRating: 4,
-      reviewText: "Great service",
-      reviewDate: "2021-11-15",
-    },
-  ],
-  availabilty: {
-    sunday: [9, 10, 11, 12, 13, 14, 15],
-    monday: [9, 10, 11, 12, 13, 14, 15],
-    tuesday: [9, 10, 11, 12, 13, 14, 15],
-    wednesday: [9, 10, 11, 12, 13, 14, 15],
-    thursday: [9, 10, 11, 12, 13, 14, 15],
-    friday: [9, 10, 11, 12, 13],
-  },
-};
-function renderBookDetails(obj) {
+const profesUrl = "http://localhost:8001/professionals";
+const profId = getId();
+
+async function init() {
+  try {
+    const profResponse = await axios.get(`${profesUrl}/${profId}`);
+    const profDetailes = profResponse.data;
+    renderProfesssionalDetails(profDetailes);
+  } catch (error) {
+    console.log(error);
+  }
+}
+init();
+
+function getId() {
+  const params = new URLSearchParams(window.location.search);
+  const getId = params.get("id");
+  return getId;
+}
+function renderProfesssionalDetails(obj) {
   for (const key in obj) {
     switch (key) {
       case "specialization":
@@ -56,8 +46,9 @@ function renderBookDetails(obj) {
       case "phoneNumber":
         document.querySelector(`#${key}`).innerText = obj[key];
         break;
+      case "reviews":
+        document.querySelector(`#${key}`).innerText = obj[key][0].reviewText;
+        break;
     }
   }
 }
-
-renderBookDetails(prof);
