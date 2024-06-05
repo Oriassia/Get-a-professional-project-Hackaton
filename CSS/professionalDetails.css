@@ -1,13 +1,13 @@
 .mainContainer {
-  position: relative;
-  width: 70%;
-  height: 80vh;
-  display: flex;
-  justify-content: space-between;
-  background-color: aliceblue;
-  padding: 1em;
-  margin: 1em;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 p.infoKey {
   display: inline;
@@ -16,11 +16,20 @@ p.infoKey {
 }
 
 .detailsContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+
 }
 
-#bookMe {
-  position: fixed;
+
+#image{
+    width: 50%;
 }
+
+.infoDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
