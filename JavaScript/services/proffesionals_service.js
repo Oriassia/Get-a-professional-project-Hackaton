@@ -1,4 +1,18 @@
-// const proffesionalsData = await axios.get(url)
+
+
+
+// const url = "http://localhost:8001/professionals";
+
+// async function getBaseUrl(){
+//     const response = await axios.get(url);
+//     return response.data
+// }
+// const proffesionalsData = getBaseUrl()
+// console.log(proffesionalsData);
+// console.log("dsfsfkpj");
+
+
+
 
 const params = new URLSearchParams(window.location.search)
 const specializationFilterValue = params.get('specialization')

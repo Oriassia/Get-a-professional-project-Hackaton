@@ -1,6 +1,9 @@
+// import { todoService } fro
+
 const elementCardsContainer = document.querySelector(
   ".proffesional-card-container"
 );
+
 
 // async function proffesionalsGet() {
 //   const proffesionals = await axios.get(baseURL);
@@ -28,5 +31,4 @@ function renderProffesionalsCards(array) {
     elementCardsContainer.innerHTML += card;
   }
 }
-
-renderProffesionalsCards(proffesionalsArray);
+// renderProffesionalsCards(proffesionalsArray);

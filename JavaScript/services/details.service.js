@@ -1,3 +1,22 @@
+import { getData,getDataArray } from "./getData.js";
+
+console.log("sdfvsdfvbdab");
+
+let proffesionalsData = []
+
+importDataToFile()
+
+async function importDataToFile(){
+  await getData()
+  proffesionalsData = getDataArray()
+}
+console.log(proffesionalsData);
+
+
+const params = new URLSearchParams(window.location.search)
+const specializationFilterValue = params.get('id')
+
+
 const prof = {
   id: 1,
   specialization: ["plumber"],
