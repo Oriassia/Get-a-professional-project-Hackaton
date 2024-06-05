@@ -9,10 +9,10 @@ const proffesionalsArray = [
     name: "David",
     phoneNumber: "32456789",
     yearsOfExperience: 15,
-    serviceArea: "northern-district",
+    serviceArea: ["northern-district", "Golan heights"],
     rating: {
       totalStars: 4,
-      UserswhoRated: 32,
+      usersWhoRated: 1,
     },
     reviews: [
       {
@@ -22,265 +22,931 @@ const proffesionalsArray = [
         reviewDate: "2021-11-15",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15],
-      monday: [9, 10, 11, 12, 13, 14, 15],
-      tuesday: [9, 10, 11, 12, 13, 14, 15],
-      wednesday: [9, 10, 11, 12, 13, 14, 15],
-      thursday: [9, 10, 11, 12, 13, 14, 15],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 2,
-    specialization: ["handyman", "locksmith"],
-    name: "Emily",
-    phoneNumber: "45678901",
-    yearsOfExperience: 7,
-    serviceArea: "Tel-Aviv district",
+    specialization: ["electrician"],
+    name: "John",
+    phoneNumber: "12345678",
+    yearsOfExperience: 10,
+    serviceArea: ["Tel-Aviv district", "Jerusalem-district"],
     rating: {
-      totalStars: 3,
-      UserswhoRated: 47,
+      totalStars: 7,
+      usersWhoRated: 2,
     },
     reviews: [
       {
-        reviewerName: "Tom",
+        reviewerName: "Sarah",
         reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewText: "Good service",
+        reviewDate: "2021-10-10",
+      },
+      {
+        reviewerName: "Mike",
+        reviewRating: 3,
+        reviewText: "Average work",
+        reviewDate: "2021-10-12",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14],
-      monday: [9, 10, 11, 12, 13, 14],
-      tuesday: [9, 10, 11, 12, 13, 14],
-      wednesday: [9, 10, 11, 12, 13, 14],
-      thursday: [9, 10, 11, 12, 13, 14],
-      friday: [9, 10, 11, 12],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 3,
     specialization: ["painter"],
-    name: "Alex",
-    phoneNumber: "78901234",
-    yearsOfExperience: 20,
-    serviceArea: "Southern-district",
+    name: "Alice",
+    phoneNumber: "23456789",
+    yearsOfExperience: 7,
+    serviceArea: ["Southern-district", "Tel-Aviv district"],
     rating: {
-      totalStars: 5,
-      UserswhoRated: 80,
+      totalStars: 9,
+      usersWhoRated: 3,
     },
     reviews: [
       {
         reviewerName: "Tom",
         reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewText: "Good painting",
+        reviewDate: "2021-09-20",
+      },
+      {
+        reviewerName: "Emma",
+        reviewRating: 2,
+        reviewText: "Could be better",
+        reviewDate: "2021-09-22",
+      },
+      {
+        reviewerName: "John",
+        reviewRating: 3,
+        reviewText: "Not bad",
+        reviewDate: "2021-09-23",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      monday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      tuesday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      wednesday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      thursday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 4,
     specialization: ["gardener"],
-    name: "Sarah",
+    name: "Chris",
     phoneNumber: "34567890",
     yearsOfExperience: 12,
-    serviceArea: "Jerusalem-district",
+    serviceArea: ["Jerusalem-district", "Southern-district"],
     rating: {
-      totalStars: 4,
-      UserswhoRated: 58,
+      totalStars: 12,
+      usersWhoRated: 3,
     },
     reviews: [
       {
-        reviewerName: "Tom",
+        reviewerName: "Anna",
         reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewText: "Excellent work",
+        reviewDate: "2021-08-15",
+      },
+      {
+        reviewerName: "Jack",
+        reviewRating: 5,
+        reviewText: "Very professional",
+        reviewDate: "2021-08-16",
+      },
+      {
+        reviewerName: "Emma",
+        reviewRating: 3,
+        reviewText: "Good job",
+        reviewDate: "2021-08-17",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15, 16],
-      monday: [9, 10, 11, 12, 13, 14, 15, 16],
-      tuesday: [9, 10, 11, 12, 13, 14, 15, 16],
-      wednesday: [9, 10, 11, 12, 13, 14, 15, 16],
-      thursday: [9, 10, 11, 12, 13, 14, 15, 16],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 5,
-    specialization: ["electrician", "plumber"],
-    name: "John",
-    phoneNumber: "67890123",
-    yearsOfExperience: 10,
-    serviceArea: "Golan heights",
+    specialization: ["locksmith"],
+    name: "Eve",
+    phoneNumber: "45678901",
+    yearsOfExperience: 5,
+    serviceArea: ["Tel-Aviv district", "Golan heights"],
     rating: {
-      totalStars: 2,
-      UserswhoRated: 50,
+      totalStars: 8,
+      usersWhoRated: 2,
     },
     reviews: [
       {
-        reviewerName: "Tom",
-        reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewerName: "Mike",
+        reviewRating: 5,
+        reviewText: "Fast and reliable",
+        reviewDate: "2021-07-14",
+      },
+      {
+        reviewerName: "Sarah",
+        reviewRating: 3,
+        reviewText: "Good service",
+        reviewDate: "2021-07-15",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15],
-      monday: [9, 10, 11, 12, 13, 14, 15],
-      tuesday: [9, 10, 11, 12, 13, 14, 15],
-      wednesday: [9, 10, 11, 12, 13, 14, 15],
-      thursday: [9, 10, 11, 12, 13, 14, 15],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 6,
-    specialization: ["locksmith"],
-    name: "Jessica",
-    phoneNumber: "89012345",
-    yearsOfExperience: 25,
-    serviceArea: "northern-district",
+    specialization: ["handyman"],
+    name: "Frank",
+    phoneNumber: "56789012",
+    yearsOfExperience: 8,
+    serviceArea: ["northern-district", "Jerusalem-district"],
     rating: {
-      totalStars: 5,
-      UserswhoRated: 100,
+      totalStars: 10,
+      usersWhoRated: 3,
     },
     reviews: [
       {
         reviewerName: "Tom",
+        reviewRating: 3,
+        reviewText: "Decent job",
+        reviewDate: "2021-06-11",
+      },
+      {
+        reviewerName: "Anna",
         reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewText: "Good work",
+        reviewDate: "2021-06-12",
+      },
+      {
+        reviewerName: "Jack",
+        reviewRating: 3,
+        reviewText: "Average service",
+        reviewDate: "2021-06-13",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14],
-      monday: [9, 10, 11, 12, 13, 14],
-      tuesday: [9, 10, 11, 12, 13, 14],
-      wednesday: [9, 10, 11, 12, 13, 14],
-      thursday: [9, 10, 11, 12, 13, 14],
-      friday: [9, 10, 11, 12],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 7,
-    specialization: ["painter", "handyman"],
-    name: "Chris",
-    phoneNumber: "23456789",
-    yearsOfExperience: 8,
-    serviceArea: "Tel-Aviv district",
+    specialization: ["painter"],
+    name: "Grace",
+    phoneNumber: "67890123",
+    yearsOfExperience: 9,
+    serviceArea: ["Southern-district", "Tel-Aviv district"],
     rating: {
-      totalStars: 3,
-      UserswhoRated: 24,
+      totalStars: 11,
+      usersWhoRated: 2,
     },
     reviews: [
       {
-        reviewerName: "Tom",
-        reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewerName: "Mike",
+        reviewRating: 6,
+        reviewText: "Excellent job",
+        reviewDate: "2021-05-20",
+      },
+      {
+        reviewerName: "Sarah",
+        reviewRating: 5,
+        reviewText: "Good painting",
+        reviewDate: "2021-05-21",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15],
-      monday: [9, 10, 11, 12, 13, 14, 15],
-      tuesday: [9, 10, 11, 12, 13, 14, 15],
-      wednesday: [9, 10, 11, 12, 13, 14, 15],
-      thursday: [9, 10, 11, 12, 13, 14, 15],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 8,
     specialization: ["electrician"],
-    name: "Linda",
-    phoneNumber: "56789012",
-    yearsOfExperience: 5,
-    serviceArea: "Jerusalem-district",
+    name: "Hank",
+    phoneNumber: "78901234",
+    yearsOfExperience: 14,
+    serviceArea: ["Jerusalem-district", "northern-district"],
     rating: {
-      totalStars: 4,
-      UserswhoRated: 20,
+      totalStars: 16,
+      usersWhoRated: 3,
     },
     reviews: [
       {
         reviewerName: "Tom",
-        reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewRating: 6,
+        reviewText: "Excellent work",
+        reviewDate: "2021-04-10",
+      },
+      {
+        reviewerName: "Emma",
+        reviewRating: 5,
+        reviewText: "Good electrician",
+        reviewDate: "2021-04-12",
+      },
+      {
+        reviewerName: "John",
+        reviewRating: 5,
+        reviewText: "Professional",
+        reviewDate: "2021-04-13",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15, 16],
-      monday: [9, 10, 11, 12, 13, 14, 15, 16],
-      tuesday: [9, 10, 11, 12, 13, 14, 15, 16],
-      wednesday: [9, 10, 11, 12, 13, 14, 15, 16],
-      thursday: [9, 10, 11, 12, 13, 14, 15, 16],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 9,
-    specialization: ["painter", "gardener"],
-    name: "Michael",
-    phoneNumber: "12345678",
-    yearsOfExperience: 15,
-    serviceArea: "Southern-district",
+    specialization: ["gardener"],
+    name: "Ivy",
+    phoneNumber: "89012345",
+    yearsOfExperience: 6,
+    serviceArea: ["Golan heights", "northern-district"],
     rating: {
-      totalStars: 3,
-      UserswhoRated: 35,
+      totalStars: 9,
+      usersWhoRated: 3,
     },
     reviews: [
       {
-        reviewerName: "Tom",
+        reviewerName: "Anna",
         reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewText: "Nice work",
+        reviewDate: "2021-03-20",
+      },
+      {
+        reviewerName: "Jack",
+        reviewRating: 3,
+        reviewText: "Good job",
+        reviewDate: "2021-03-22",
+      },
+      {
+        reviewerName: "Emma",
+        reviewRating: 2,
+        reviewText: "Could be better",
+        reviewDate: "2021-03-23",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      monday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      tuesday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      wednesday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      thursday: [9, 10, 11, 12, 13, 14, 15, 16, 17],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
   {
     id: 10,
-    specialization: ["handyman"],
-    name: "Kevin",
-    phoneNumber: "34567890",
-    yearsOfExperience: 9,
-    serviceArea: "Golan heights",
+    specialization: ["locksmith"],
+    name: "Jake",
+    phoneNumber: "90123456",
+    yearsOfExperience: 11,
+    serviceArea: ["Tel-Aviv district", "Southern-district"],
     rating: {
-      totalStars: 4,
-      UserswhoRated: 40,
+      totalStars: 12,
+      usersWhoRated: 4,
     },
     reviews: [
       {
-        reviewerName: "Tom",
+        reviewerName: "Mike",
         reviewRating: 4,
-        reviewText: "Great service",
-        reviewDate: "2021-11-15",
+        reviewText: "Fast and reliable",
+        reviewDate: "2021-02-15",
+      },
+      {
+        reviewerName: "Sarah",
+        reviewRating: 3,
+        reviewText: "Good service",
+        reviewDate: "2021-02-16",
+      },
+      {
+        reviewerName: "Tom",
+        reviewRating: 2,
+        reviewText: "Average",
+        reviewDate: "2021-02-17",
+      },
+      {
+        reviewerName: "Emma",
+        reviewRating: 3,
+        reviewText: "Satisfactory",
+        reviewDate: "2021-02-18",
       },
     ],
-    availabilty: {
-      sunday: [9, 10, 11, 12, 13, 14, 15],
-      monday: [9, 10, 11, 12, 13, 14, 15],
-      tuesday: [9, 10, 11, 12, 13, 14, 15],
-      wednesday: [9, 10, 11, 12, 13, 14, 15],
-      thursday: [9, 10, 11, 12, 13, 14, 15],
-      friday: [9, 10, 11, 12, 13],
+    availability: {
+      sunday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      monday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      tuesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      wednesday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      thursday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      friday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
+      saturday: [
+        { hour: "9", available: "true" },
+        { hour: "10", available: "true" },
+        { hour: "11", available: "true" },
+        { hour: "12", available: "true" },
+        { hour: "13", available: "true" },
+        { hour: "14", available: "true" },
+        { hour: "15", available: "true" },
+      ],
     },
   },
 ];
@@ -313,7 +979,6 @@ function renderProffesionalsCards(array) {
 
 renderProffesionalsCards(proffesionalsArray);
 
-
 function updateUrlByFilter(ev) {
   ev.preventDefault();
   console.log("hiiii");
@@ -327,51 +992,52 @@ function updateUrlByFilter(ev) {
   params.set("servicearea", areaSelectValue);
   params.set("rating", ratingSelectValue);
 
-
-  window.location.search = params
+  window.location.search = params;
 }
 // console.log(URL(window.location.search))
 
 document.addEventListener("DOMContentLoaded", function () {
-    renderAppointmentList();
-  });
-  
-  async function renderAppointmentList() {
-    const appointmentList = document.querySelector(".appointments");
-    const [appointments, professionals] = await Promise.all([
-      fetchAppointments(),
-      fetchProfessionals()
-    ]);
-  
-    // Clear the existing appointments if any
-    appointmentList.innerHTML = "";
-  
-    if (appointments.length === 0) {
-      const noAppointments = document.createElement("li");
-      noAppointments.textContent = "No appointments found.";
-      appointmentList.appendChild(noAppointments);
-      return;
-    }
-  
-    appointments.forEach((appointment) => {
-      const professional = professionals.find(pro => pro.id === appointment.professionalId);
-  
-      const appointmentItem = document.createElement("li");
-      appointmentItem.classList.add("appointment-item");
-  
-      const appointmentDetails = `
+  renderAppointmentList();
+});
+
+async function renderAppointmentList() {
+  const appointmentList = document.querySelector(".appointments");
+  const [appointments, professionals] = await Promise.all([
+    fetchAppointments(),
+    fetchProfessionals(),
+  ]);
+
+  // Clear the existing appointments if any
+  appointmentList.innerHTML = "";
+
+  if (appointments.length === 0) {
+    const noAppointments = document.createElement("li");
+    noAppointments.textContent = "No appointments found.";
+    appointmentList.appendChild(noAppointments);
+    return;
+  }
+
+  appointments.forEach((appointment) => {
+    const professional = professionals.find(
+      (pro) => pro.id === appointment.professionalId
+    );
+
+    const appointmentItem = document.createElement("li");
+    appointmentItem.classList.add("appointment-item");
+
+    const appointmentDetails = `
         <div class="appointment-info">
           <p><strong>Appointment ID:</strong> ${appointment.id}</p>
           <p><strong>Date:</strong> ${appointment.date}</p>
           <p><strong>Time:</strong> ${appointment.time}</p>
           <p><strong>Professional ID:</strong> ${appointment.professionalId}</p>
-          <p><strong>Professional Name:</strong> ${professional ? professional.name : 'N/A'}</p>
+          <p><strong>Professional Name:</strong> ${
+            professional ? professional.name : "N/A"
+          }</p>
         </div>
       `;
-  
-      appointmentItem.innerHTML = appointmentDetails;
-      appointmentList.appendChild(appointmentItem);
-    });
-  }
-  
- 
+
+    appointmentItem.innerHTML = appointmentDetails;
+    appointmentList.appendChild(appointmentItem);
+  });
+}
