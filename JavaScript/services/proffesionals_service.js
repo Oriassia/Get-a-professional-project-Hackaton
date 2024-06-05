@@ -1,5 +1,5 @@
 // const proffesionalsData = await axios.get(url)
-const baseURL = "http://localhost:8002/professionals";
+const baseURL = "http://localhost:8001/professionals";
 const elementCardsContainer = document.querySelector(
   ".proffesional-card-container"
 );
@@ -61,15 +61,7 @@ const servicaAreaFilterValue = params.get("servicearea");
 const ratingFilterValue = params.get("rating");
 
 function proffesionalsPageInit(data) {
-  let filteredData = [...data]; // Make a copy of the data array
-  let filteredData = [...data]; // Make a copy of the data array
-
-  if (specializationFilterValue) {
-    filteredData = filteredData.filter((item) =>
-      item.specialization.includes(specializationFilterValue)
-    );
-  }
-
+  let filteredData = [...data]; 
   if (servicaAreaFilterValue) {
     filteredData = filteredData.filter((item) =>
       item.serviceArea.includes(servicaAreaFilterValue)
@@ -79,21 +71,10 @@ function proffesionalsPageInit(data) {
   if (ratingFilterValue) {
     filteredData = filterByRating(ratingFilterValue, filteredData);
   }
-  if (ratingFilterValue) {
-    filteredData = filterByRating(ratingFilterValue, filteredData);
-  }
 
-  return filteredData;
   return filteredData;
 }
 
-function filterByRating(ratingFilterValue, dataArray) {
-  return dataArray.filter((item) => {
-    const starsSum = item.rating.totalStars;
-    const usersWhoRatedSum = item.rating.usersWhoRated;
-    const ratingSum = (starsSum / usersWhoRatedSum).toFixed(1);
-    return ratingSum >= ratingFilterValue;
-  });
 function filterByRating(ratingFilterValue, dataArray) {
   return dataArray.filter((item) => {
     const starsSum = item.rating.totalStars;
