@@ -24,11 +24,24 @@ function renderProffesionalsCards(array) {
   for (const obj of array) {
     const card = `
     <a href = "http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}">
-    <div class = "proffesional-card" >
-    <img src="${obj.image}" alt=""></img>
-    <p>${obj.name}</p>
-    <p>${obj.specialization}</p>
-    <p>${obj.serviceArea}</p>
+    <div class = "card" >
+
+    <div class ="profileImage">
+    <img src="${obj.image}" alt="">
+    </img></div>
+    
+    <div class = "textContainer">
+    <div>
+    <p><h3>Name</h3>${obj.name}</p>
+    </div>
+    <div>
+    <p><h3>Profession</h3>${obj.specialization}</p>
+    </div>
+    <div>
+    <p><h3>Service Area</h3>${obj.serviceArea}</p>
+    </div>
+    </div>
+
     </div>
     </a>
       `;
