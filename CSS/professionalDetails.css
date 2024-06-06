@@ -53,13 +53,13 @@ button {
 }
 
 dialog {
-  position: fixed;
-  top: 30vh;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 5px;
-  font-weight: bold;
-  z-index: 999;
+    position: fixed;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1;
 }
 
 .book-me {
@@ -78,6 +78,7 @@ th {
 .unavailable {
   background-color: lightcoral;
 }
+
 .middlePage {
   display: flex;
   justify-content: center;

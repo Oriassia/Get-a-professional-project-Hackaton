@@ -15,7 +15,8 @@ async function init() {
     profObj = profDetailes;
     console.log(profObj);
     renderProfesssionalDetails(profDetailes);
-    await axios.get(favUrl);
+    const favResponse = await axios.get(`${favUrl}/${profId}`);
+    favBtn.classList.add("activeFav");
   } catch (error) {
     console.log(error);
   }
@@ -107,22 +108,29 @@ async function addReview(e) {
 
 async function addToFavorites() {
   favBtn.classList.toggle("activeFav");
-  if (favBtn.classList.contains("favBtn")) {
+  const isFavorite = favBtn.classList.contains("activeFav");
+
+  if (isFavorite) {
     try {
-      const res = await axios.post(favUrl, profObj);
-      console.log(res);
+      const response = await axios.post(favUrl, profObj);
+      console.log("Professional added to favorites:", response.data);
     } catch (error) {
-      console.error(error);
+      console.error("Failed to add professional to favorites:", error.message);
+      // Optionally, display a user-friendly error message to the user
     }
   } else {
     try {
-      const res = await axios.delete(`${favUrl}/${profId}`);
-      console.log(res);
+      const response = await axios.delete(`${favUrl}/${profId}`);
+      console.log("Professional removed from favorites:", response.data);
     } catch (error) {
-      console.error(error);
+      console.error(
+        "Failed to remove professional from favorites:",
+        error.message
+      );
     }
   }
 }
+
 async function bookMeButton() {
   const elementBookMe = document.querySelector(".book-me table");
   elementBookMe.innerHTML = "";
