@@ -182,3 +182,157 @@
     <script src="/JavaScript/services/details.service.js"></script>
   </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proffesional Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/main.css" />
+  </head>
+  <body>
+    <dialog class="addReview">
+      <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
+      <form onsubmit="addReview(event)" class="addReviewForm">
+        <input
+          type="text"
+          id="reviewerNameInput"
+          placeholder="Enter your name"
+          required
+        />
+        <input
+          type="number"
+          id="ratingInput"
+          placeholder="Enter your rating 1-5"
+          required
+        />
+        <input
+          type="text"
+          id="reviewTextInput"
+          placeholder="Enter your review"
+          required
+        />
+        <button>Submit</button>
+      </form>
+    </dialog>
+    <dialog class="book-me">
+      <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
+      <h2 style="text-align: center">Available</h2>
+      <table></table>
+    </dialog>
+    <div class="pageContainer">
+      <nav>
+        <a href="home.html"
+          ><img src="../imgs/output-onlinepngtools.png" alt=""
+        /></a>
+        <a href="favorites.html">My favourites</a>
+        <a href="">My activity</a>
+        <a href="appointments.html">My appointments</a>
+      </nav>
+      <div class="middlePage">
+        <div class="mainContainer">
+          <div class="wrapperDetailsAndImage">
+            <div class="detailsContainer">
+              <div class="infoDetail">
+                <div class="dataLine">
+                  <p class="infoKey">Specialize:</p>
+                  <span class="infoValue" id="specialization">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Name:</p>
+                  <span class="infoValue" id="name">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Years Of Experience:</p>
+                  <span class="infoValue" id="yearsOfExperience">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Rating:</p>
+                  <span class="infoValue" id="rating">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Service Area:</p>
+                  <span class="infoValue" id="serviceArea">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Phone Number:</p>
+                  <span class="infoValue" id="phoneNumber">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Reviews:</p>
+                  <span class="infoValue" id="reviews">N/A</span>
+                </div>
+                <div class="buttonsContainer">
+                  <button onclick="bookMeButton()" id="bookMe">
+                    Book me<i class="fa-regular fa-calendar-check"></i>
+                  </button>
+                  <button id="addReviewBtn" onclick="showPopUp('.addReview')">
+                    Add review
+                  </button>
+                  <button onclick="addToFavorites()" class="favBtn">
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <img src="" alt="No image available" id="image" />
+          </div>
+        </div>
+      </div>
+
+      <footer id="footer">
+        <div class="company-details">
+          <div class="row">
+            <div id="col1">
+              <span id="icon" class="fa fa-map-marker"></span>
+
+              <span>
+                Ha-Khilazon St 3, Ramat-Gan
+                <br />Israel, 5252267
+              </span>
+            </div>
+
+            <div id="col2">
+              <span id="icon" class="fa fa-phone"></span>
+
+              <span> Telephone: +972774123211 </span>
+            </div>
+
+            <div id="col3">
+              <span id="icon" class="fa fa-envelope"></span>
+              <span>info@iitc.co.il</span>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© All rights reserved | Junior Developers</p>
+
+          <ul class="contact">
+            <li>
+              <a href="#"><i class="fa fa-whatsapp"></i> </a>
+            </li>
+
+            <li>
+              <a href="#" class="fa fa-facebook"> </a>
+            </li>
+
+            <li>
+              <a href="#" class="fa fa-github"> </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/JavaScript/services/details.service.js"></script>
+  </body>
+</html>
