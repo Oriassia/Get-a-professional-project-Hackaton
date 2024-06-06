@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proffesional Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -13,6 +15,26 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../CSS/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Nanum+Gothic&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Inconsolata:wght@200..900&family=Nanum+Gothic&family=Play:wght@400;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <dialog class="addReview">
@@ -39,8 +61,12 @@
         <button>Submit</button>
       </form>
     </dialog>
-    <dialog class="book-me">
-      <h2 style="text-align: center">Available</h2>
+    <dialog class="book-me" style="display: none;">
+      <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
+      <h2 style="text-align: center;  font-family: Inconsolata, monospace;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;">Available</h2>
       <table></table>
     </dialog>
     <div class="pageContainer">
@@ -132,15 +158,15 @@
 
           <ul class="contact">
             <li>
-              <a href="#"><i class="fa fa-whatsapp"></i> </a>
+              <a href="#"><i class="fab fa-whatsapp"></i> </a>
             </li>
 
             <li>
-              <a href="#" class="fa fa-facebook"> </a>
+              <a href="#" class="fab fa-facebook"> </a>
             </li>
 
             <li>
-              <a href="#" class="fa fa-github"> </a>
+              <a href="#" class="fab fa-github"> </a>
             </li>
           </ul>
         </div>

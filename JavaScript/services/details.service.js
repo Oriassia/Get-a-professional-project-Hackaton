@@ -49,7 +49,7 @@ function renderProfesssionalDetails(obj) {
         console.log("obj[key].totalStars", obj[key].totalStars);
         console.log("obj[key].UserswhoRated", obj[key].usersWhoRated);
         document.querySelector(`#${key}`).innerText = `${
-          obj[key].totalStars / (obj[key].usersWhoRated*10)
+          obj[key].totalStars / (obj[key].usersWhoRated * 10)
         }/5 `;
         break;
       case "serviceArea":
@@ -73,14 +73,14 @@ function renderProfesssionalDetails(obj) {
 function showPopUp(className) {
   popUpElem = document.querySelector(className);
   popUpElem.open = true;
-  document.querySelector(".pageContainer").style.filter = "opacity(0.3)";
+  document.querySelector(".pageContainer").style.filter = "opacity(0.1)";
 }
 
 function cancelPopUp() {
-  popUpElem.open = false;
+  const dialog = document.querySelector(".book-me");
+  dialog.style.display = "none";
   document.querySelector(".pageContainer").style.filter = "none";
 }
-
 async function addReview(e) {
   e.preventDefault();
   const reviewerName = reviewerNameInput.value;
@@ -151,6 +151,8 @@ async function bookMeButton() {
 async function bookMe(key, popAppElement) {
   let index = 0;
   showPopUp(".book-me");
+  const dialog = document.querySelector(".book-me");
+  dialog.style.display = "flex";
   try {
     const profResponse = await axios.get(`${profesUrl}/${profId}`);
 
