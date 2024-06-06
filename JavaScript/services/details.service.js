@@ -49,7 +49,7 @@ function renderProfesssionalDetails(obj) {
         console.log("obj[key].totalStars", obj[key].totalStars);
         console.log("obj[key].UserswhoRated", obj[key].usersWhoRated);
         document.querySelector(`#${key}`).innerText = `${
-          obj[key].totalStars / (obj[key].usersWhoRated*10)
+          obj[key].totalStars / (obj[key].usersWhoRated * 10)
         }/5 `;
         break;
       case "serviceArea":
@@ -194,4 +194,28 @@ async function updateAvailability(key, index) {
 
   await axios.post("http://localhost:8001/appointments", newAppointments);
   bookMeButton();
+  toastMessage("appointments booked successfully")
+}
+
+const FADE_DUR = 700,
+  MIN_DUR = 3000;
+let toastContain;
+
+function toastMessage(str, addClass) {
+  let duration = Math.max(MIN_DUR, str.length * 80);
+
+  if (!toastContain) {
+    toastContain = document.createElement("div");
+    toastContain.classList.add("toastContain");
+    document.body.appendChild(toastContain);
+  }
+
+  const EL = document.createElement("div");
+  EL.classList.add("toast", addClass);
+  EL.innerText = str;
+  toastContain.prepend(EL);
+
+  setTimeout(() => EL.classList.add("open"));
+  setTimeout(() => EL.classList.remove("open"), duration);
+  setTimeout(() => toastContain.removeChild(EL), duration + FADE_DUR);
 }
