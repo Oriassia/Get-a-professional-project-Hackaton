@@ -92,6 +92,7 @@ async function addReview(e) {
     data.reviews.push(newReview);
     console.log(data);
    await axios.put(`${profesUrl}/${profId}`, data);
+   renderProfesssionalDetails(data)
   } catch (error) {
     console.log(error);
   }

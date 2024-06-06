@@ -7,13 +7,14 @@ nav {
   display: flex;
   text-align: center;
   align-items: center;
-  background-color: rgba(175, 211, 240, 0.744);
+  background-color: rgb(185, 208, 228);
   gap: 2em;
   position: sticky;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  border-radius: 2px;
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 800;
   font-style: normal;
   font-variation-settings: "wdth" 100;
   text-transform: uppercase;
@@ -25,7 +26,7 @@ nav img {
 }
 nav a {
   text-decoration: none;
-  color: rgb(37, 37, 37);
+  color: black;
 }
 .company-details {
   padding: 1.5em 0em;

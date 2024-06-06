@@ -59,7 +59,13 @@ main {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 7px;
   background-color: white;
-  /* padding: 1em; */
+}
+#professions div:hover {
+  margin-top: -2em;
+  margin-left: 0em;
+  scale: 1.1;
+  cursor: pointer;
+  transition: all 0.43s ease;
 }
 #professions div a {
   text-decoration: none;
@@ -67,6 +73,11 @@ main {
 }
 #professions div p {
   margin: 5px;
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(38, 38, 38);
+  padding-left: 1em;
 }
 img {
   width: 100%;
