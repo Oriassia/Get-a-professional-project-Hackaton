@@ -15,7 +15,8 @@ async function init() {
     profObj = profDetailes;
     console.log(profObj);
     renderProfesssionalDetails(profDetailes);
-    await axios.get(favUrl);
+    const favResponse = await axios.get(`${favUrl}/${profId}`);
+    favBtn.classList.add("activeFav");
   } catch (error) {
     console.log(error);
   }
@@ -128,6 +129,7 @@ async function addToFavorites() {
       );
     }
   }
+}
 
 async function bookMeButton() {
   const elementBookMe = document.querySelector(".book-me table");
