@@ -32,10 +32,10 @@ function renderProffesionalsCards(array) {
     
     <div class = "textContainer">
     <div>
-    <p><h3>Name</h3>${obj.name}</p>
+    <h2>${obj.name}</h2>
     </div>
     <div>
-    <p><h3>Profession</h3>${obj.specialization}</p>
+    <h3>${obj.specialization}</h3>
     </div>
     <div>
     <p><h3>Service Area</h3>${obj.serviceArea}</p>
@@ -72,7 +72,9 @@ const servicaAreaFilterValue = params.get("servicearea");
 const ratingFilterValue = params.get("rating");
 
 function proffesionalsPageInit(data) {
+  console.log("data",data);
   let filteredData = [...data]; // Make a copy of the data array
+  console.log("filter",filteredData);
 
   if (specializationFilterValue) {
     filteredData = filteredData.filter((item) =>
