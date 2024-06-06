@@ -107,19 +107,25 @@ async function addReview(e) {
 
 async function addToFavorites() {
   favBtn.classList.toggle("activeFav");
-  if (favBtn.classList.contains("favBtn")) {
+  const isFavorite = favBtn.classList.contains("activeFav");
+
+  if (isFavorite) {
     try {
-      const res = await axios.post(favUrl, profObj);
-      console.log(res);
+      const response = await axios.post(favUrl, profObj);
+      console.log("Professional added to favorites:", response.data);
     } catch (error) {
-      console.error(error);
+      console.error("Failed to add professional to favorites:", error.message);
+      // Optionally, display a user-friendly error message to the user
     }
   } else {
     try {
-      const res = await axios.delete(`${favUrl}/${profId}`);
-      console.log(res);
+      const response = await axios.delete(`${favUrl}/${profId}`);
+      console.log("Professional removed from favorites:", response.data);
     } catch (error) {
-      console.error(error);
+      console.error(
+        "Failed to remove professional from favorites:",
+        error.message
+      );
     }
   }
 
