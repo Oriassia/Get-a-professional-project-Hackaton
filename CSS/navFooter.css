@@ -44,7 +44,7 @@ nav a {
 #footer #col3 {
   width: 250px;
 }
-span {
+footer span {
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -94,3 +94,4 @@ ul.contact li a {
   line-height: 40px;
   text-align: center;
 }
+

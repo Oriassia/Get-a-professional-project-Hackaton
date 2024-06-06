@@ -1,15 +1,17 @@
 const baseURL = "http://localhost:8001/professionals";
 const elementCardsContainer = document.querySelector(".cards-container");
+const loader = document.querySelector(".loader");
 
 let proffesionalsArray;
-
-
 
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
+  showLoader();
+
   await proffesionalsGet();
   renderProfessionalsCards(proffesionalsPageInit(proffesionalsArray));
+
   console.log(proffesionalsArray);
 }
 
@@ -28,7 +30,7 @@ async function renderProfessionalsCards(array) {
   elementCardsContainer.innerHTML = "";
   for (const obj of array) {
     const cardContainer = document.createElement("a");
-    cardContainer.style.position = "relative"
+    cardContainer.style.position = "relative";
     cardContainer.href = `http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}`;
     cardContainer.innerHTML = `
       <div class="card">
@@ -43,7 +45,7 @@ async function renderProfessionalsCards(array) {
             <p id="profession"><i class="fa-solid fa-wrench"></i> ${obj.specialization}</p>
           </div>
           <div>
-            <p id="area"><i class="fa-solid fa-map-location-dot"></i>  ${obj.serviceArea}</p>
+            <p id="area"><i class="fa-solid fa-map-location-dot"></i> ${obj.serviceArea}</p>
           </div>
         </div>
       </div>
@@ -51,7 +53,9 @@ async function renderProfessionalsCards(array) {
 
     try {
       console.log(obj.id);
-      const response = await axios.get(`http://localhost:8001/favorites/${obj.id}`);
+      const response = await axios.get(
+        `http://localhost:8001/favorites/${obj.id}`
+      );
       if (response.data) {
         console.log(response.data);
         const favIconContainer = document.createElement("div");
@@ -62,20 +66,15 @@ async function renderProfessionalsCards(array) {
       // Handle error if axios request fails
       console.error("Error fetching favorite:", error);
     }
-
     elementCardsContainer.appendChild(cardContainer);
+    setTimeout(hideLoader, 5000);
   }
-}
-
-
-async function getFavMark(container){
-
-    container.appendChild()
 }
 
 function updateUrlByFilter(ev) {
   ev.preventDefault();
-  const specializationSelectValue = document.querySelector(".specialization").value;
+  const specializationSelectValue =
+    document.querySelector(".specialization").value;
   const ratingSelectValue = document.querySelector(".rating").value;
   const areaSelectValue = document.querySelector(".area").value;
 
@@ -93,9 +92,9 @@ const servicaAreaFilterValue = params.get("servicearea");
 const ratingFilterValue = params.get("rating");
 
 function proffesionalsPageInit(data) {
-  console.log("data",data);
+  console.log("data", data);
   let filteredData = [...data]; // Make a copy of the data array
-  console.log("filter",filteredData);
+  console.log("filter", filteredData);
 
   if (specializationFilterValue) {
     filteredData = filteredData.filter((item) =>
@@ -123,4 +122,13 @@ function filterByRating(ratingFilterValue, dataArray) {
     const ratingSum = (starsSum / usersWhoRatedSum).toFixed(1);
     return ratingSum >= ratingFilterValue;
   });
+}
+
+function showLoader() {
+  loader.style.display = "grid"; // Use the display value that you have set in the CSS
+}
+
+function hideLoader() {
+  loader.style.display = "none";
+  document.querySelector(".loader-overlay").style.display = "none"; // Hide the overlay
 }

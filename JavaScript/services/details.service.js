@@ -10,13 +10,18 @@ let profObj;
 init();
 async function init() {
   try {
+    showLoader(); // Show loader when initiating
+
     const profResponse = await axios.get(`${profesUrl}/${profId}`);
     const profDetailes = profResponse.data;
     profObj = profDetailes;
     console.log(profObj);
     renderProfesssionalDetails(profDetailes);
+    hideLoader(); 
     const favResponse = await axios.get(`${favUrl}/${profId}`);
     favBtn.classList.add("activeFav");
+
+    // Hide loader after all data is fetched and rendered
   } catch (error) {
     console.log(error);
   }
@@ -200,4 +205,41 @@ async function updateAvailability(key, index) {
 
   await axios.post("http://localhost:8001/appointments", newAppointments);
   bookMeButton();
+  toastMessage("appointments booked successfully")
+}
+
+const FADE_DUR = 700,
+  MIN_DUR = 3000;
+let toastContain;
+
+function toastMessage(str, addClass) {
+  let duration = Math.max(MIN_DUR, str.length * 80);
+
+  if (!toastContain) {
+    toastContain = document.createElement("div");
+    toastContain.classList.add("toastContain");
+    document.body.appendChild(toastContain);
+  }
+
+  const EL = document.createElement("div");
+  EL.classList.add("toast", addClass);
+  EL.innerText = str;
+  toastContain.prepend(EL);
+
+  setTimeout(() => EL.classList.add("open"));
+  setTimeout(() => EL.classList.remove("open"), duration);
+  setTimeout(() => toastContain.removeChild(EL), duration + FADE_DUR);
+}
+
+function showLoader() {
+  const loader = document.querySelector(".loader");
+  loader.style.display = "block";
+}
+
+function hideLoader() {
+  const loader = document.querySelector(".loader");
+  loader.style.display = "none";
+  
+  const loaderOverlay = document.querySelector(".loader-overlay");
+  loaderOverlay.style.display = "none"; // Hide the overlay
 }
