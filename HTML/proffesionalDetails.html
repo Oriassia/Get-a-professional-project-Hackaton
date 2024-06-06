@@ -67,6 +67,10 @@
             <img src="" alt="No image available" id="image" />
           </div>
         </div>
+        <button id="bookMe" onclick="bookMeButton()">
+          Book me<i class="fa-regular fa-calendar-check"></i>
+        </button>
+        <button id="addReviewBtn" onclick="showPopUp('.addReview' )">Add review</button>
       </div>
       <dialog class="addReview">
         <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
@@ -91,6 +95,11 @@
           />
           <button>Submit</button>
         </form>
+      </dialog>
+      <dialog class="book-me">
+        <h2 style="text-align: center;">Available</h2>
+        <table></table>
+        
       </dialog>
       <footer id="footer">
         <div class="company-details">

@@ -92,6 +92,9 @@ i{
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.329);
 }
 
+.card h2{
+  font-size: 30px;
+}
 .textContainer {
   width: 100%;
   text-align: left;

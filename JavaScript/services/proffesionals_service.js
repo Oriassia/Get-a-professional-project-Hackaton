@@ -83,7 +83,9 @@ const servicaAreaFilterValue = params.get("servicearea");
 const ratingFilterValue = params.get("rating");
 
 function proffesionalsPageInit(data) {
+  console.log("data",data);
   let filteredData = [...data]; // Make a copy of the data array
+  console.log("filter",filteredData);
 
   if (specializationFilterValue) {
     filteredData = filteredData.filter((item) =>
