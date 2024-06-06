@@ -35,10 +35,10 @@ async function renderAppointmentList() {
     appointments.forEach((appointment) => {
       console.log("Rendering appointment:", appointment); // Debug log
 
-      if (!appointment.miniProfessional) {
-        console.error("No miniProfessional found for appointment:", appointment);
-        return;
-      }
+      // if (!appointment.miniProfessional) {
+      //   console.error("No miniProfessional found for appointment:", appointment);
+      //   return;
+      // }
 
       const appointmentItem = document.createElement("li");
       appointmentItem.classList.add("appointment-item");
@@ -47,11 +47,10 @@ async function renderAppointmentList() {
         <div class="appointment-info">
           <p><strong>Date:</strong> ${appointment.date}</p>
           <p><strong>Time:</strong> ${appointment.time}</p>
-          <p><strong>Professional Name:</strong> ${appointment.miniProfessional.name}</p>
-          <p><strong>Professional Specialization:</strong> ${appointment.miniProfessional.specialization.join(", ")}</p>
+          <p><strong>Professional Name:</strong> ${appointment.name}</p>
+          <p><strong>Professional Specialization:</strong> ${appointment.specialization.join(", ")}</p>
         </div>
         <div class="appointment-actions">
-          <button class="btn btn-primary">Edit</button>
           <button class="btn btn-danger" data-id="${appointment.id}">Delete</button>
         </div>
       `;

@@ -39,6 +39,10 @@
         <button>Submit</button>
       </form>
     </dialog>
+    <dialog class="book-me">
+      <h2 style="text-align: center">Available</h2>
+      <table></table>
+    </dialog>
     <div class="pageContainer">
       <nav>
         <a href="home.html"
@@ -82,10 +86,10 @@
                   <span class="infoValue" id="reviews">N/A</span>
                 </div>
                 <div class="buttonsContainer">
-                  <button id="bookMe">
+                  <button onclick="bookMeButton()" id="bookMe">
                     Book me<i class="fa-regular fa-calendar-check"></i>
                   </button>
-                  <button id="addReviewBtn" onclick="showPopUp()">
+                  <button id="addReviewBtn" onclick="showPopUp('.addReview')">
                     Add review
                   </button>
                   <button onclick="addToFavorites()" class="favBtn">
@@ -97,40 +101,8 @@
             <img src="" alt="No image available" id="image" />
           </div>
         </div>
-        <button id="bookMe" onclick="bookMeButton()">
-          Book me<i class="fa-regular fa-calendar-check"></i>
-        </button>
-        <button id="addReviewBtn" onclick="showPopUp('.addReview' )">Add review</button>
       </div>
-      <dialog class="addReview">
-        <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
-        <form onsubmit="addReview(event)" class="addReviewForm">
-          <input
-            type="text"
-            id="reviewerNameInput"
-            placeholder="Enter your name"
-            required
-          />
-          <input
-            type="number"
-            id="ratingInput"
-            placeholder="Enter your rating 1-5"
-            required
-          />
-          <input
-            type="text"
-            id="reviewTextInput"
-            placeholder="Enter your review"
-            required
-          />
-          <button>Submit</button>
-        </form>
-      </dialog>
-      <dialog class="book-me">
-        <h2 style="text-align: center;">Available</h2>
-        <table></table>
-        
-      </dialog>
+
       <footer id="footer">
         <div class="company-details">
           <div class="row">
@@ -160,7 +132,7 @@
 
           <ul class="contact">
             <li>
-              <a href="#" class="fa fa-whatsapp"></i> </a>
+              <a href="#"><i class="fa fa-whatsapp"></i> </a>
             </li>
 
             <li>

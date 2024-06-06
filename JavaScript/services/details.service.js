@@ -122,7 +122,7 @@ async function addToFavorites() {
       console.error(error);
     }
   }
-
+}
 async function bookMeButton() {
   const elementBookMe = document.querySelector(".book-me table");
   elementBookMe.innerHTML = "";
