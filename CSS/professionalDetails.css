@@ -61,6 +61,7 @@ dialog {
     transform: translateX(-50%);
     border-radius: 5px;
     font-weight: bold;
+    z-index: 1;
 }
 
 .book-me{
@@ -79,9 +80,6 @@ background-color: lightgreen;
 }
 .unavailable{
 background-color: lightcoral;
-}
-    height: 20em;
-    z-index: 1;
 }
 
 .middlePage {
