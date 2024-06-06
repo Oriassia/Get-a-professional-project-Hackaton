@@ -24,28 +24,29 @@ async function getFavs() {
 }
 
 function renderFavsCards(array) {
-  elementCardsContainer.innerHTML = "";
-  for (const obj of array) {
-    const card = `
-      <a href="http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}">
-        <div class="card">
-          <div class="profileImage">
-            <img src="${obj.image}" alt="">
+    elementCardsContainer.innerHTML = "";
+    for (const obj of array) {
+      const card = `
+        <a href="http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}" style="position: relative;">
+            <i class="fa-regular fa-star activeFav card-wrapper" style="position: absolute;"></i>
+          <div class="card">
+            <div class="profileImage">
+              <img src="${obj.image}" alt="">
+            </div>
+            <div class="textContainer">
+              <div>
+                <p id="name">${obj.name}</p>
+              </div>
+              <div>
+                <p id="profession"><i class="fa-solid fa-wrench"></i> ${obj.specialization}</p>
+              </div>
+              <div>
+                <p id="area"><i class="fa-solid fa-map-location-dot"></i>  ${obj.serviceArea}</p>
+              </div>
+            </div>
           </div>
-          <div class="textContainer">
-            <div>
-              <p id="name">${obj.name}</p>
-            </div>
-            <div>
-              <p id="profession"><i class="fa-solid fa-wrench"></i> ${obj.specialization}</p>
-            </div>
-            <div>
-              <p id="area"><i class="fa-solid fa-map-location-dot"></i>  ${obj.serviceArea}</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    `;
-    elementCardsContainer.innerHTML += card;
+        </a>
+      `;
+      elementCardsContainer.innerHTML += card;
+    }
   }
-}
