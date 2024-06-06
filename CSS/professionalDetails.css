@@ -61,6 +61,7 @@ dialog {
     border-radius: 5px;
     font-weight: bold;
     height: 20em;
+    z-index: 1;
 }
 
 .middlePage {
@@ -116,4 +117,8 @@ button:focus {
     flex-direction: column;
     justify-content: space-between;
     gap: 1em;
+}
+
+.activeFav{
+    color: yellow;
 }

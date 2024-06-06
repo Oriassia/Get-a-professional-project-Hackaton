@@ -1,14 +1,20 @@
 const profesUrl = "http://localhost:8001/professionals";
+const favUrl = "http://localhost:8001/favorites";
 const profId = getId();
 const reviewerNameInput = document.querySelector("#reviewerNameInput");
 const ratingInput = document.querySelector("#ratingInput");
 const reviewTextInput = document.querySelector("#reviewTextInput");
+const favBtn = document.querySelector(".favBtn");
+let profObj;
 
 async function init() {
   try {
     const profResponse = await axios.get(`${profesUrl}/${profId}`);
     const profDetailes = profResponse.data;
+    profObj = profDetailes;
+    console.log(profObj);
     renderProfesssionalDetails(profDetailes);
+    await axios.get(favUrl);
   } catch (error) {
     console.log(error);
   }
@@ -66,12 +72,12 @@ function renderProfesssionalDetails(obj) {
 function showPopUp() {
   popUpElem = document.querySelector(".addReview");
   popUpElem.open = true;
-  document.querySelector(".mainContainer").style.filter = "brightness(0.5)";
+  document.querySelector(".pageContainer").style.filter = "opacity(0.3)";
 }
 
 function cancelPopUp() {
   popUpElem.open = false;
-  document.querySelector(".mainContainer").style.filter = "none";
+  document.querySelector(".pageContainer").style.filter = "none";
 }
 
 async function addReview(e) {
@@ -91,10 +97,28 @@ async function addReview(e) {
 
     data.reviews.push(newReview);
     console.log(data);
-   await axios.put(`${profesUrl}/${profId}`, data);
-   renderProfesssionalDetails(data)
+    await axios.put(`${profesUrl}/${profId}`, data);
+    renderProfesssionalDetails(data);
   } catch (error) {
     console.log(error);
   }
-  cancelPopUp()
+  cancelPopUp();
+}
+async function addToFavorites() {
+  favBtn.classList.toggle("activeFav");
+  if (favBtn.classList.contains("favBtn")) {
+    try {
+      const res = await axios.post(favUrl, profObj);
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    try {
+      const res = await axios.delete(`${favUrl}/${profId}`);
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
