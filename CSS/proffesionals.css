@@ -10,15 +10,21 @@ body {
 .filter-select {
   font-family: inherit;
   font-size: inherit;
-  background-color: #6365d85e;
-  border: none;
-  color: #0b0404;
-  padding: 0.7rem 1rem;
+  background-color: #19487ead;
+  border: 1px solid rgba(0, 0, 0, 0.059);
+  color: #ffffff;
+  padding: 0.2em 1em;
   border-radius: 30px;
-  width: 12em;
+  width: 11.5em;
   transition: all ease-in-out 0.5s;
   margin-right: -2rem;
   outline: none;
+  letter-spacing: 1px;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 .proffesional-card-container {
@@ -43,12 +49,14 @@ a {
   text-decoration: none;
   color: black;
 }
-select{
+select {
   cursor: pointer;
 }
-option{
-  color: rgb(38, 38, 38);
+option {
+  color: rgb(1, 0, 0);
+  background-color: #ece7e7cf;
 }
+
 .card {
   width: 300px;
   height: 100%;
@@ -65,13 +73,13 @@ option{
 #name {
   font-weight: 600;
 }
-i{
+i {
   padding: 0;
 }
 #area i {
   color: #494747;
 }
-#profession i{
+#profession i {
   color: #494747;
 }
 #profession {
@@ -102,7 +110,6 @@ i{
   font-family: "Play", sans-serif;
   /* font-weight: 700; */
   font-style: normal;
-  
 }
 
 .profile {
@@ -114,4 +121,35 @@ i{
 .card:hover {
   background-color: rgba(156, 149, 149, 0.555);
   transition-duration: 0.5s;
+}
+form button {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #176ea9;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  letter-spacing: 2px;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  border: 1px solid rgba(0, 0, 0, 0.059);
+}
+
+form button:hover {
+  background-color: #3f8cbf;
+  box-shadow: 0 0 20px #447a9e50;
+  transform: scale(1.1);
+}
+
+form button:active {
+  background-color: #15384f;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
 }
