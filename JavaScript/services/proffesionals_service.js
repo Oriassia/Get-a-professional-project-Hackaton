@@ -1,5 +1,5 @@
 const baseURL = "http://localhost:8001/professionals";
-const elementCardsContainer = document.querySelector(".proffesional-card-container");
+const elementCardsContainer = document.querySelector(".cards-container");
 
 let proffesionalsArray;
 
@@ -10,17 +10,6 @@ async function init() {
   renderProffesionalsCards(proffesionalsPageInit(proffesionalsArray));
   adjustGridRows();
   console.log(proffesionalsArray);
-}
-
-function adjustGridRows() {
-  const container = document.querySelector(".proffesional-card-container");
-  const childrenCount = container.children.length;
-
-  if (childrenCount <= 6) {
-    container.style.gridTemplateRows = "1fr 1fr";
-  } else {
-    container.style.gridTemplateRows = "1fr 1fr 1fr";
-  }
 }
 
 async function proffesionalsGet() {
@@ -40,6 +29,7 @@ function renderProffesionalsCards(array) {
     const card = `
       <a href="http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}">
         <div class="card">
+        <div class="fav-mark-card"></div>
           <div class="profileImage">
             <img src="${obj.image}" alt="">
           </div>
@@ -59,12 +49,10 @@ function renderProffesionalsCards(array) {
     `;
     elementCardsContainer.innerHTML += card;
   }
-  adjustGridRows(); // Adjust grid rows after rendering cards
 }
 
 function updateUrlByFilter(ev) {
   ev.preventDefault();
-  console.log("hiiii");
   const specializationSelectValue = document.querySelector(".specialization").value;
   const ratingSelectValue = document.querySelector(".rating").value;
   const areaSelectValue = document.querySelector(".area").value;
