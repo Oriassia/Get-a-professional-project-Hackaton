@@ -60,6 +60,25 @@ dialog {
     transform: translateX(-50%);
     border-radius: 5px;
     font-weight: bold;
+}
+
+.book-me{
+    padding: 20px;
+}
+
+
+
+td, th{
+    padding: 10px;
+    border: 1px solid black;
+
+}
+.available{
+background-color: lightgreen;
+}
+.unavailable{
+background-color: lightcoral;
+}
     height: 20em;
     z-index: 1;
 }
