@@ -80,6 +80,7 @@ background-color: lightgreen;
 background-color: lightcoral;
 }
     height: 20em;
+    z-index: 1;
 }
 
 .middlePage {
@@ -135,4 +136,8 @@ button:focus {
     flex-direction: column;
     justify-content: space-between;
     gap: 1em;
+}
+
+.activeFav{
+    color: yellow;
 }
