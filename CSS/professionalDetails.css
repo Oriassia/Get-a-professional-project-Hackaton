@@ -173,12 +173,14 @@ button:focus {
 dialog.book-me {
   margin-top: -7.5em;
   border: 1px solid rgb(148, 146, 146);
+  flex-direction: column;
 }
 dialog i {
   align-self: flex-end;
   cursor: pointer;
 }
 .book-me table {
+  width: 1000px;
   font-family: "Inconsolata", monospace;
   font-optical-sizing: auto;
   font-weight: 500;

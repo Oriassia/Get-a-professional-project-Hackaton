@@ -67,7 +67,7 @@ async function renderProfessionalsCards(array) {
       console.error("Error fetching favorite:", error);
     }
     elementCardsContainer.appendChild(cardContainer);
-    setTimeout(hideLoader, 5000);
+    setTimeout(hideLoader, 1000);
   }
 }
 
