@@ -106,4 +106,7 @@ ul.appointments p, span {
     justify-content: center;
     margin-top: 10px;
   }
+  nav{
+    padding-left: 1em;
+  }
 }

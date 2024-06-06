@@ -63,6 +63,7 @@ i {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -107,9 +108,11 @@ th {
   display: flex;
   justify-content: center;
 }
-
 .buttonsContainer {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 button {
   align-self: center;
@@ -177,6 +180,7 @@ dialog.book-me{
 }
 dialog i{
     align-self: flex-end;
+    cursor: pointer;
 }
 .book-me table{
     font-family: "Inconsolata", monospace;
@@ -192,3 +196,38 @@ th{
     border-radius: 5px;
     background-color: #ece7e7;
 }
+
+@media screen and (max-width: 768px) {
+    .mainContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%; /* Adjusted width for larger screens */
+      max-width: 1000px; /* Increased maximum width for larger screens */
+    }
+    .wrapperDetailsAndImage{
+        display: flex;
+      flex-direction: column-reverse;
+    }
+    img#image{
+        position: relative;
+        justify-content: flex-start
+    };
+    .detailsContainer {
+      flex-direction: row;
+      gap: 2em;
+    }
+  
+    #image {
+      width: 100%; /* Adjusted width for larger screens */
+    
+    }
+  
+    button {
+      flex: initial; /* Reset button width for larger screens */
+    }
+  
+    .book-me {
+      width: 80vw;
+    }
+   
+  }
