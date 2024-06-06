@@ -35,7 +35,7 @@ ul.appointments .appointment-info {
 
 ul.appointments .appointment-info p {
   margin: 0;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.6;
 }
 
@@ -82,13 +82,18 @@ body {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #db3838;
   font-weight: 300;
   margin-bottom: 40px;
 }
 
-p, span {
-  font-family: 'Roboto', sans-serif;
+ul.appointments p, span {
+  font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
+    font-variation-settings: "wdth" 100;
 }
 
 /* Responsive design for mobile view */

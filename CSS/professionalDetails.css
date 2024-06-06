@@ -11,13 +11,31 @@
   margin: 1.5em;
   margin-bottom: 5em;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
-
+.mainContainer span{
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    font-variation-settings: "wdth" 100;
+}
 p.infoKey {
   display: inline;
   font-weight: bold;
   color: rgb(7, 72, 61);
   font-size: 1.1em;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  font-variation-settings: "wdth" 100;
 }
 
 .detailsContainer {
@@ -73,10 +91,16 @@ th {
   height: 50px;
 }
 .available {
-  background-color: lightgreen;
+  background-color: rgb(111, 239, 111);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .unavailable {
-  background-color: lightcoral;
+  background-color: rgb(248, 69, 69);
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed
 }
 
 .middlePage {
@@ -116,6 +140,13 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
+    font-variation-settings: "wdth" 100;
+
 }
 
 button:hover {
@@ -136,4 +167,28 @@ button:focus {
 
 .activeFav {
   color: yellow;
+}
+dialog.book-me{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -7.5em;
+    border: 1px solid rgb(148, 146, 146);
+}
+dialog i{
+    align-self: flex-end;
+}
+.book-me table{
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    text-align: center;
+    
+}
+th{
+    border: none;
+    border-radius: 5px;
+    background-color: #ece7e7;
 }
