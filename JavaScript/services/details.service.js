@@ -77,31 +77,20 @@ function renderProfesssionalDetails(obj) {
 
 function showPopUp(className) {
   popUpElem = document.querySelector(className);
-  popUpElem.open = true;
+  popUpElem.style.display = "block"
   document.querySelector(".pageContainer").style.filter = "opacity(0.1)";
 }
 
-function cancelPopUp() {
-  const dialog = document.querySelector(".book-me"); // Select the correct dialog element
-  const dialogAddReview = document.querySelector("dialog.AddReview");
-
-  // Check if dialogAddReview exists before attempting to access its properties
-  if (dialogAddReview) {
-    dialogAddReview.style.display = "none"; // Hide the dialog by setting its display to "none"
-  }
-
-  if (dialog) {
-    dialog.style.display = "none"; // Hide the dialog by setting its display to "none"
-  }
-
+function cancelPopUp(className) {
+  popUpElem = document.querySelector(className);
+  console.log(popUpElem);
+  popUpElem.open = false;
+  popUpElem.style.display ='none'
   document.querySelector(".pageContainer").style.filter = "none";
 }
 
 async function addReview(e) {
   e.preventDefault();
-  const dialogAddReview = document.querySelector("dialog.AddReview");
-  dialogAddReview.style.display = "flex"; // Show the dialog by setting its display to "block"
-  
   const reviewerName = reviewerNameInput.value;
   const reviewRating = ratingInput.value;
   const reviewText = reviewTextInput.value;
@@ -119,11 +108,12 @@ async function addReview(e) {
     console.log(data);
     await axios.put(`${profesUrl}/${profId}`, data);
     renderProfesssionalDetails(data);
+    cancelPopUp('.addReview');
   } catch (error) {
     console.log(error);
   }
-  cancelPopUp();
 }
+
 
 async function addToFavorites() {
   favBtn.classList.toggle("activeFav");

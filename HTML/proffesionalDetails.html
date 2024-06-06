@@ -41,7 +41,7 @@
       <div class="loader"></div>
     </div>
     <dialog class="addReview">
-      <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
+      <i class="fa-solid fa-x" onclick="cancelPopUp('.addReview')"></i>
       <form onsubmit="addReview(event)" class="addReviewForm">
         <input
           type="text"
@@ -65,8 +65,18 @@
       </form>
     </dialog>
     <dialog class="book-me">
-      <i class="fa-solid fa-x" onclick="cancelPopUp()"></i>
-      <h2 style="text-align: center">Available</h2>
+      <i class="fa-solid fa-x" onclick="cancelPopUp('.book-me')"></i>
+      <h2
+        style="
+          text-align: center;
+          font-family: Inconsolata, monospace;
+          font-optical-sizing: auto;
+          font-weight: 700;
+          font-style: normal;
+        "
+      >
+        Available
+      </h2>
       <table></table>
     </dialog>
     <div class="pageContainer">

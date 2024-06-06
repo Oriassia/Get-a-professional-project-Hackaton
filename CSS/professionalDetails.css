@@ -17,13 +17,13 @@
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
-.mainContainer span{
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 16px;
-    font-variation-settings: "wdth" 100;
+.mainContainer span {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  font-variation-settings: "wdth" 100;
 }
 p.infoKey {
   display: inline;
@@ -72,13 +72,13 @@ button {
 }
 
 dialog {
-    position: fixed;
-    top: 30vh;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
-    font-weight: bold;
-    z-index: 10;
+  position: fixed;
+  top: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 10;
 }
 
 .book-me {
@@ -101,7 +101,7 @@ th {
   background-color: rgb(248, 69, 69);
   border: none;
   border-radius: 5px;
-  cursor: not-allowed
+  cursor: not-allowed;
 }
 
 .middlePage {
@@ -144,12 +144,11 @@ button {
   -webkit-user-select: none;
   touch-action: manipulation;
   font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 16px;
-    font-variation-settings: "wdth" 100;
-
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 16px;
+  font-variation-settings: "wdth" 100;
 }
 
 button:hover {
@@ -171,63 +170,59 @@ button:focus {
 .activeFav {
   color: yellow;
 }
-dialog.book-me{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: -7.5em;
-    border: 1px solid rgb(148, 146, 146);
+dialog.book-me {
+  margin-top: -7.5em;
+  border: 1px solid rgb(148, 146, 146);
+  flex-direction: column;
 }
-dialog i{
-    align-self: flex-end;
-    cursor: pointer;
+dialog i {
+  align-self: flex-end;
+  cursor: pointer;
 }
-.book-me table{
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    text-align: center;
-    
+.book-me table {
+  width: 1000px;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  text-align: center;
 }
-th{
-    border: none;
-    border-radius: 5px;
-    background-color: #ece7e7;
+th {
+  border: none;
+  border-radius: 5px;
+  background-color: #ece7e7;
 }
 
 @media screen and (max-width: 768px) {
-    .mainContainer {
-      display: flex;
-      flex-direction: column;
-      width: 100%; /* Adjusted width for larger screens */
-      max-width: 1000px; /* Increased maximum width for larger screens */
-    }
-    .wrapperDetailsAndImage{
-        display: flex;
-      flex-direction: column-reverse;
-    }
-    img#image{
-        position: relative;
-        justify-content: flex-start
-    };
-    .detailsContainer {
-      flex-direction: row;
-      gap: 2em;
-    }
-  
-    #image {
-      width: 100%; /* Adjusted width for larger screens */
-    
-    }
-  
-    button {
-      flex: initial; /* Reset button width for larger screens */
-    }
-  
-    .book-me {
-      width: 80vw;
-    }
-   
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Adjusted width for larger screens */
+    max-width: 1000px; /* Increased maximum width for larger screens
   }
+  .wrapperDetailsAndImage {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  img#image {
+    position: relative;
+    justify-content: flex-start;
+  }
+  .detailsContainer {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  #image {
+    width: 100%; /* Adjusted width for larger screens */
+  }
+
+  button {
+    flex: initial; /* Reset button width for larger screens */
+  }
+
+  .book-me {
+    width: 80vw;
+  }
+}
