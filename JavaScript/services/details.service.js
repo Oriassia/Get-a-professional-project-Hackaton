@@ -49,7 +49,7 @@ function renderProfesssionalDetails(obj) {
         console.log("obj[key].totalStars", obj[key].totalStars);
         console.log("obj[key].UserswhoRated", obj[key].usersWhoRated);
         document.querySelector(`#${key}`).innerText = `${
-          obj[key].totalStars / obj[key].usersWhoRated
+          obj[key].totalStars / (obj[key].usersWhoRated*10)
         }/5 `;
         break;
       case "serviceArea":
