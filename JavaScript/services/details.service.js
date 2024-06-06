@@ -7,6 +7,7 @@ const reviewTextInput = document.querySelector("#reviewTextInput");
 const favBtn = document.querySelector(".favBtn");
 let profObj;
 
+init();
 async function init() {
   try {
     const profResponse = await axios.get(`${profesUrl}/${profId}`);
@@ -19,7 +20,6 @@ async function init() {
     console.log(error);
   }
 }
-init();
 
 function getId() {
   const params = new URLSearchParams(window.location.search);
@@ -69,8 +69,8 @@ function renderProfesssionalDetails(obj) {
   }
 }
 
-function showPopUp() {
-  popUpElem = document.querySelector(".addReview");
+function showPopUp(className) {
+  popUpElem = document.querySelector(className);
   popUpElem.open = true;
   document.querySelector(".pageContainer").style.filter = "opacity(0.3)";
 }
@@ -104,6 +104,7 @@ async function addReview(e) {
   }
   cancelPopUp();
 }
+
 async function addToFavorites() {
   favBtn.classList.toggle("activeFav");
   const isFavorite = favBtn.classList.contains("activeFav");
@@ -127,4 +128,68 @@ async function addToFavorites() {
       );
     }
   }
+
+async function bookMeButton() {
+  const elementBookMe = document.querySelector(".book-me table");
+  elementBookMe.innerHTML = "";
+  const days = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+  ];
+  for (const item of days) {
+    await bookMe(item, elementBookMe);
+  }
+}
+
+async function bookMe(key, popAppElement) {
+  let index = 0;
+  showPopUp(".book-me");
+  try {
+    const profResponse = await axios.get(`${profesUrl}/${profId}`);
+
+    const dayData = profResponse.data.availability[key];
+    const tempTR = document.createElement("tr");
+    tempTR.innerHTML += `<th>${key} </th>`;
+
+    dayData.forEach((obj, index) => {
+      const hourTD = document.createElement("td");
+      hourTD.textContent = `${obj.hour}:00`;
+      if (obj.available === "true") {
+        hourTD.classList.add("available");
+        hourTD.addEventListener("click", () => {
+          updateAvailability(key, index);
+        });
+      }
+      if (obj.available === "false") {
+        hourTD.classList.add("unavailable");
+      }
+      tempTR.appendChild(hourTD);
+    });
+
+    popAppElement.appendChild(tempTR);
+  } catch (error) {
+    console.error("error getting object");
+  }
+}
+
+async function updateAvailability(key, index) {
+  const profResponse = await axios.get(`${profesUrl}/${profId}`);
+  profResponse.data.availability[key][index].available = "false";
+
+  await axios.put(`${profesUrl}/${profId}`, profResponse.data);
+
+  const newAppointments = {
+    date: key,
+    time: profResponse.data.availability[key][index].hour,
+    name: profResponse.data.name,
+    specialization: profResponse.data.specialization,
+  };
+
+  await axios.post("http://localhost:8001/appointments", newAppointments);
+  bookMeButton();
 }
