@@ -5,17 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proffesional Details</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
     <link rel="stylesheet" href="../CSS/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css"
-    />
   </head>
   <body>
     <div class="pageContainer">
@@ -27,41 +20,52 @@
         <a href="">My activity</a>
         <a href="appointments.html">My appointments</a>
       </nav>
-      <div class="mainContainer">
-        <div class="wrapperDetailsAndImage">
-          <div class="detailsContainer">
-            <div class="infoDetail">
-              <div class="dataLine">
-                <p class="infoKey">specialzie:</p>
-                <span class="infoValue" id="specialization">N/A</span>
-              </div>
-              <div class="dataLine">
-                <p class="infoKey">name:</p>
-                <span class="infoValue" id="name">N/A</span>
-              </div>
-              <div class="dataLine">
-                <p class="infoKey">Years of Experience:</p>
-                <span class="infoValue" id="yearsOfExperience">N/A</span>
-              </div>
-              <div class="dataLine">
-                <p class="infoKey">Rating:</p>
-                <span class="infoValue" id="rating">N/A</span>
-              </div>
-              <div class="dataLine">
-                <p class="infoKey">Service area:</p>
-                <span class="infoValue" id="serviceArea">N/A</span>
-              </div>
-              <div class="dataLine">
-                <p class="infoKey">Phone number:</p>
-                <span class="infoValue" id="phoneNumber">N/A</span>
-              </div>
-              <div class="dataLine">
-                <p class="infoKey">Reviews:</p>
-                <span class="infoValue" id="reviews">N/A</span>
+      <div class="middlePage">
+        <div class="mainContainer">
+          <div class="wrapperDetailsAndImage">
+            <div class="detailsContainer">
+              <div class="infoDetail">
+                <div class="dataLine">
+                  <p class="infoKey">Specialzie:</p>
+                  <span class="infoValue" id="specialization">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Name:</p>
+                  <span class="infoValue" id="name">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Years Of Experience:</p>
+                  <span class="infoValue" id="yearsOfExperience">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Rating:</p>
+                  <span class="infoValue" id="rating">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Service Area:</p>
+                  <span class="infoValue" id="serviceArea">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Phone number:</p>
+                  <span class="infoValue" id="phoneNumber">N/A</span>
+                </div>
+                <div class="dataLine">
+                  <p class="infoKey">Reviews:</p>
+                  <span class="infoValue" id="reviews">N/A</span>
+                </div>
+                <div class="buttonsContainer">
+                  <button id="bookMe">
+                    Book me<i class="fa-regular fa-calendar-check"></i>
+                  </button>
+                  <button id="addReviewBtn" onclick="showPopUp()">
+                    Add review
+                  </button>
+                  <button><i class="fa-solid fa-star"></i></button>
+                </div>
               </div>
             </div>
+            <img src="" alt="No image available" id="image" />
           </div>
-          <img src="" alt="No image available" id="image" />
         </div>
         <button id="bookMe" onclick="bookMeButton()">
           Book me<i class="fa-regular fa-calendar-check"></i>
@@ -140,7 +144,6 @@
         </div>
       </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/JavaScript/services/details.service.js"></script>
   </body>
