@@ -1,26 +1,112 @@
-.appointments {
-    display: flex;
+/* General styling for the list */
+ul.appointments {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Each appointment list item */
+ul.appointments li.appointment-item {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 60%;
+  margin: 20px auto; /* Center the appointment card horizontally */
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+ul.appointments li.appointment-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the appointment info section */
+ul.appointments .appointment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul.appointments .appointment-info p {
+  margin: 0;
+  /* font-size: 16px; */
+  line-height: 1.6;
+}
+
+ul.appointments .appointment-info p strong {
+  color: #333;
+}
+
+/* Styling for the appointment actions (buttons) */
+ul.appointments .appointment-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ul.appointments .appointment-actions .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+ul.appointments .appointment-actions .btn-danger {
+  background-color: #e74c3c;
+  color: #fff;
+}
+button{
+  align-self: flex-end;
+}
+ul.appointments .appointment-actions .btn-danger:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Additional styling for overall text appearance */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
+  color: #444;
+  margin: 0;
+  /* padding: 20px; */
+}
+
+h1 {
+  text-align: center;
+  color: #db3838;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+ul.appointments p, span {
+  font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 16px;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 600px) {
+  ul.appointments li.appointment-item {
     flex-direction: column;
-    gap: 20px; /* Adjust the gap between rows */
-    padding-block: 1em;
-    padding-inline: 2em;
   }
-  
-  .appointment-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+
+  ul.appointments .appointment-actions {
+    justify-content: center;
+    margin-top: 10px;
   }
-  
-  .appointment-info {
-    flex: 1;
+  nav{
+    padding-left: 1em;
   }
-  
-  .appointment-info p {
-    margin: 5px 0;
-  }
-  
+}
