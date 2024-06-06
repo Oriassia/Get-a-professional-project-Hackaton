@@ -77,12 +77,26 @@ function showPopUp(className) {
 }
 
 function cancelPopUp() {
-  const dialog = document.querySelector(".book-me");
-  dialog.style.display = "none";
+  const dialog = document.querySelector(".book-me"); // Select the correct dialog element
+  const dialogAddReview = document.querySelector("dialog.AddReview");
+
+  // Check if dialogAddReview exists before attempting to access its properties
+  if (dialogAddReview) {
+    dialogAddReview.style.display = "none"; // Hide the dialog by setting its display to "none"
+  }
+
+  if (dialog) {
+    dialog.style.display = "none"; // Hide the dialog by setting its display to "none"
+  }
+
   document.querySelector(".pageContainer").style.filter = "none";
 }
+
 async function addReview(e) {
   e.preventDefault();
+  const dialogAddReview = document.querySelector("dialog.AddReview");
+  dialogAddReview.style.display = "flex"; // Show the dialog by setting its display to "block"
+  
   const reviewerName = reviewerNameInput.value;
   const reviewRating = ratingInput.value;
   const reviewText = reviewTextInput.value;
