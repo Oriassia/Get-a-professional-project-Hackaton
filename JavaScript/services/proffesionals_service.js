@@ -3,12 +3,13 @@ const elementCardsContainer = document.querySelector(".cards-container");
 
 let proffesionalsArray;
 
+
+
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {
   await proffesionalsGet();
-  renderProffesionalsCards(proffesionalsPageInit(proffesionalsArray));
-  adjustGridRows();
+  renderProfessionalsCards(proffesionalsPageInit(proffesionalsArray));
   console.log(proffesionalsArray);
 }
 
@@ -23,32 +24,53 @@ async function proffesionalsGet() {
   }
 }
 
-function renderProffesionalsCards(array) {
+async function renderProfessionalsCards(array) {
   elementCardsContainer.innerHTML = "";
   for (const obj of array) {
-    const card = `
-      <a href="http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}">
-        <div class="card">
-        <div class="fav-mark-card"></div>
-          <div class="profileImage">
-            <img src="${obj.image}" alt="">
+    const cardContainer = document.createElement("a");
+    cardContainer.style.position = "relative"
+    cardContainer.href = `http://127.0.0.1:5500/HTML/proffesionalDetails.html?id=${obj.id}`;
+    cardContainer.innerHTML = `
+      <div class="card">
+        <div class="profileImage">
+          <img src="${obj.image}" alt="">
+        </div>
+        <div class="textContainer">
+          <div>
+            <p id="name">${obj.name}</p>
           </div>
-          <div class="textContainer">
-            <div>
-              <p id="name">${obj.name}</p>
-            </div>
-            <div>
-              <p id="profession"><i class="fa-solid fa-wrench"></i> ${obj.specialization}</p>
-            </div>
-            <div>
-              <p id="area"><i class="fa-solid fa-map-location-dot"></i>  ${obj.serviceArea}</p>
-            </div>
+          <div>
+            <p id="profession"><i class="fa-solid fa-wrench"></i> ${obj.specialization}</p>
+          </div>
+          <div>
+            <p id="area"><i class="fa-solid fa-map-location-dot"></i>  ${obj.serviceArea}</p>
           </div>
         </div>
-      </a>
+      </div>
     `;
-    elementCardsContainer.innerHTML += card;
+
+    try {
+      console.log(obj.id);
+      const response = await axios.get(`http://localhost:8001/favorites/${obj.id}`);
+      if (response.data) {
+        console.log(response.data);
+        const favIconContainer = document.createElement("div");
+        favIconContainer.innerHTML = `<i class="fa-regular fa-star activeFav card-wrapper" style="position:absolute"></i>`;
+        cardContainer.appendChild(favIconContainer);
+      }
+    } catch (error) {
+      // Handle error if axios request fails
+      console.error("Error fetching favorite:", error);
+    }
+
+    elementCardsContainer.appendChild(cardContainer);
   }
+}
+
+
+async function getFavMark(container){
+
+    container.appendChild()
 }
 
 function updateUrlByFilter(ev) {

@@ -75,6 +75,13 @@ option {
   background-color: #ece7e7cf;
 }
 
+.activeFav.card-wrapper {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 25px;
+}
+
 .card {
   width: 300px;
   height: 100%;
